@@ -13,5 +13,8 @@ ul.language-switcher {
       filter: none;
       pointer-events: none;
     }
+    &:hover {
+      filter: none;
+    }
   }
 }
