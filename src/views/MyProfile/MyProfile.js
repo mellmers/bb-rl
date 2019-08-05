@@ -28,7 +28,7 @@ class MyProfile extends React.PureComponent {
         console.log("submit", formData);
         console.log("username valid?", this.state.usernameValid);
         if (this.state.usernameValid) {
-            API.getInstance()._fetch("/user/" + this.props.user.id, "PATCH", formData, null, {
+            API.getInstance()._fetch("/user/" + this.props.user.id + "/", "PATCH", formData, null, {
                 "Authorization": "Basic " + btoa(this.props.user.username + ":" + this.props.user.password)
             })
                 .then(response => {
@@ -75,7 +75,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputName"
                                         maxLength={255}
                                         placeholder="Vorname"
-                                        defaultValue={user.firstName}
+                                        defaultValue={user.first_name}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -87,7 +87,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputSecondName"
                                         maxLength={255}
                                         placeholder="Nachname"
-                                        defaultValue={user.lastName}
+                                        defaultValue={user.last_name}
                                     />
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputHome"
                                         maxLength={255}
                                         placeholder="Bsp.: Bremen"
-                                        defaultValue={user.city}
+                                        defaultValue={user.profile.city}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -110,7 +110,7 @@ class MyProfile extends React.PureComponent {
                                         name="country"
                                         className="form-control"
                                         id="inputLand"
-                                        defaultValue={user.country}
+                                        defaultValue={user.profile.country}
                                     >
                                         <option>Deutschland</option>
                                         <option>Österreich</option>
@@ -132,7 +132,7 @@ class MyProfile extends React.PureComponent {
                                             autoComplete: "off"
                                         }}
                                         timeFormat={false}
-                                        value={user.birthday || this.state.birthday}
+                                        value={user.profile.birth_date || this.state.birthday}
                                         viewMode="years"
                                     />
                                 </div>
@@ -146,7 +146,7 @@ class MyProfile extends React.PureComponent {
                                         className="form-control"
                                         rows={4}
                                         placeholder="Ich bin bei den Bulls, weil ..."
-                                        defaultValue={user.description}
+                                        defaultValue={user.profile.bio}
                                     />
                                 </div>
                             </div>
@@ -220,7 +220,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputFavourite"
                                         maxLength={255}
                                         placeholder="Bsp.: PUBG, CS:GO, Rocket League"
-                                        defaultValue={user.games}
+                                        defaultValue={user.profile.games}
                                     />
                                 </div>
                             </div>
@@ -234,7 +234,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputClan"
                                         maxLength={255}
                                         placeholder="Bsp.: Battleground-Bulls"
-                                        defaultValue={user.clan}
+                                        defaultValue={user.profile.clan}
                                     />
                                 </div>
                             </div>

@@ -28,7 +28,6 @@ export default class API {
         if (url.indexOf("http") === -1) {
             header = $.extend({}, {
                 "Accept": "application/json",
-                "Authorization": "Basic " + btoa(CONSTANTS.WEBCLIENT_NAME + ":" + CONSTANTS.WEBCLIENT_SECRET),
                 "Content-Type": contentType
             }, header);
             if (process.env.REACT_APP_API === "local") {

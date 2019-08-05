@@ -1,5 +1,3 @@
-export const WEBCLIENT_NAME = "webclient";
-export const WEBCLIENT_SECRET = "KqsL4vuFPKmA";
 export const API_ROUTE = "https://battleground-bulls.de:8000";
 export const API_ROUTE_DEV = "https://battleground-bulls.de:9000";
 export const API_ROUTE_LOCAL = "http://localhost:9000";

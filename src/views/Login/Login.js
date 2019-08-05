@@ -30,15 +30,27 @@ class Login extends React.PureComponent {
         e.preventDefault();
         let formData = $("form").serializeObject();
 
-        let headers = new Headers();
-        headers.append("Authorization", "Basic " + btoa(formData.username + ":" + formData.password));
+        API.getInstance()._fetch("/api/token/", "POST", {
+            username: formData.username,
+            password: formData.password,
+        }, null, null).then(auth => {
+            console.log(auth);
+            if (auth.access && auth.refresh) {
+                API.getInstance()._fetch("/users/me/", "GET", null, null, {
+                    "Authorization": "Bearer " + auth.access
+                }).then(user => {
+                    if (user.id && user.username) {
+                        let search = searchToObject(this.props.location.search);
+                        user = $.extend(user, { accessToken: auth.access, refreshToken: auth.refresh});
+                        console.log(user);
 
-        API.getInstance()._fetch("/user/login", "GET", null, null, {
-            "Authorization": "Basic " + btoa(formData.username + ":" + formData.password)
-        }).then(json => {
-            let search = searchToObject(this.props.location.search);
-            this.props.dispatch(login($.extend(json, {password: formData.password})));
-            this.props.history.push(search.next || "/" + this.props.language);
+                        this.props.dispatch(login($.extend(user, {password: formData.password})));
+                        this.props.history.push(search.next || "/" + this.props.language);
+                    }
+                }).catch(error => {
+                    this.setState({ error: error });
+                });
+            }
         }).catch(error => {
             this.setState({ error: error });
         });
