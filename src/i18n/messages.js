@@ -46,7 +46,7 @@ export default defineMessages({
     },
     aboutLink2: {
         id: 'app.aboutLink2',
-        defaultMessage: 'Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an'
+        defaultMessage: '<span class=\'highlighted-text\'>Wir suchen Mitglieder!</span><br/> Werde ein Bulle!'
     },
     aboutLink3: {
         id: 'app.aboutLink3',
@@ -55,6 +55,10 @@ export default defineMessages({
     adventCalendar: {
         id: 'app.adventCalendar',
         defaultMessage: 'Adventskalender'
+    },
+    applyNow: {
+        id: 'app.applyNow',
+        defaultMessage: 'Jetzt bewerben'
     },
     bracket: {
         id: 'app.bracket',

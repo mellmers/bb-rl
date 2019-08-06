@@ -36,7 +36,7 @@
   },
   {
     "id": "app.aboutLink2",
-    "defaultMessage": "Du willst Mitglied der Bulls-Familie werden? - Schau dir unsere Bullen an",
+    "defaultMessage": "Wir suchen Mitglieder!<br/><span class=\"highlighted-text\">Bewirb</span> dich jetzt und werde ein <span class=\"highlighted-text\">Bulle</span>!",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -47,6 +47,11 @@
   {
     "id": "app.adventCalendar",
     "defaultMessage": "Adventskalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.applyNow",
+    "defaultMessage": "Jetzt bewerben",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -426,7 +431,7 @@
   },
   {
     "id": "route.gaOptOut",
-    "defaultMessage": "/de/ga-opt-out",
+    "defaultMessage": "/de/opt-out",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -486,7 +491,7 @@
   },
   {
     "id": "app.ruleHeader",
-    "defaultMessage": "Turnier-<span class=\"highlighted-text\">Regeln</span>",
+    "defaultMessage": "Turnier-Regeln",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -576,7 +581,7 @@
   },
   {
     "id": "app.streamScheduleNote",
-    "defaultMessage": "Alle anderen Tage streamen wir spontan.<br/>Änderungen werden im Discord mitgeteilt!",
+    "defaultMessage": "Alle anderen Tage streamen wir spontan.<br/>Die angegebenen Zeiten können variieren.<br/>Änderungen werden im Discord mitgeteilt!",
     "filepath": "src/i18n/messages.js"
   },
   {

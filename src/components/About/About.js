@@ -45,9 +45,9 @@ class About extends React.PureComponent {
                             <div className="col-12 col-sm-4">
                                 <SquareCard
                                     image={kuehe}
-                                    text= {formatMessage(messages.aboutLink2)}
-                                    linkTo="route.bulls"
-                                    linkDisabled
+                                    text={<FormattedHTMLMessage {...messages.aboutLink2} />}
+                                    linkTo="route.contact"
+                                    linkText={formatMessage(messages.applyNow)}
                                 />
                             </div>
                             <div className="col-12 col-sm-4">

@@ -28,7 +28,7 @@
     }
 
     .container .inner {
-      margin-top: $headerHeight + 40;
+      margin: $headerHeight + 40 0 100px;
     }
 
     &.start {
@@ -145,7 +145,6 @@
         .image-wrapper {
           position: relative;
           width: 270px;
-          height: calc(#{$partnerHeight} - 40px);
 
           &:hover {
             img:first-child {
@@ -157,12 +156,12 @@
           }
 
           img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             transition: opacity .3s;
+            &:not(:first-child) {
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
           }
 
           .highlight {
