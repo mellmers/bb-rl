@@ -8,8 +8,9 @@ import $ from "jquery";
 import About from "../../components/About/About";
 import Counter from "../../components/Counter/Counter";
 import Link from "../../components/Link/Link";
-import Rules from "../../components/Rules/Rules";
+import NewsHomepage from "../../components/NewsHomepage/NewsHomepage";
 import Partner from "../../components/Partner/Partner";
+// import Rules from "../../components/Rules/Rules";
 
 import API from "../../utils/API";
 
@@ -52,9 +53,7 @@ export class Home extends PureComponent {
         window.scrollTo(0, 0);
 
         $(this.refs.fullpage).fullpage({
-            anchors: ["start", /*"teams", "spielplan",*/ "bulls", "regeln", "partner"],
-            //navigation: true,
-            //navigationTooltips: ["Start", /*"Teams", "Spielplan",*/ "Über die Bulls", "Turnier-Regeln", "Partner"],
+            anchors: ["start", "news", "bulls", "partner", "regeln"],
             scrollOverflow: true
         });
 
@@ -256,9 +255,11 @@ export class Home extends PureComponent {
                         </div>
                     </div>
 
+                    <NewsHomepage/>
+
                     <About/>
 
-                    <Rules/>
+                    {/*<Rules/>*/}
 
                     <Partner/>
 

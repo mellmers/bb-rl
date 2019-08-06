@@ -128,22 +128,14 @@ class Header extends React.PureComponent {
                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) || active === formatMessage(messages["route.home"]) + "/#start"})}>
                                     <Link messageId="route.home" hash="start" className="nav-link">{formatMessage(messages.home)}</Link>
                                 </li>
-                                <li className={classnames("nav-item", "disabled", {"active": active === formatMessage(messages["route.news"])})}>
-                                    <Link messageId="route.news" className="nav-link">{formatMessage(messages.news)}</Link>
+                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#news"})}>
+                                    <Link messageId="route.home" hash="news" className="nav-link">{formatMessage(messages.news)}</Link>
                                 </li>
                                 {/**
                                  <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.scum"])})}>
                                     <Link messageId="route.scum" className="nav-link">Scum</Link>
                                 </li>
                                  **/}
-                                <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}>
-                                    <Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.tournament)}</Link>
-                                    <ul className="submenu">
-                                        <li className={classnames("disabled", {"active": active === "/de/turnier/teams"})}><Link to={{pathname: "/de/turnier/teams"}} className="nav-link">{formatMessage(messages.teams)}</Link></li>
-                                        <li className={classnames("disabled", {"active": active === "/de/turnier/spielplan"})}><Link to={{pathname: "/de/turnier/spielplan"}} className="nav-link">{formatMessage(messages.bracket)}</Link></li>
-                                        <li className={classnames({"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}><Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.ruleHeader)}</Link></li>
-                                    </ul>
-                                </li>
                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#bulls"})}>
                                     <Link messageId="route.home" hash="bulls" className="nav-link">{formatMessage(messages.aboutBulls)}</Link>
                                     <ul className="submenu">
@@ -154,6 +146,14 @@ class Header extends React.PureComponent {
                                 </li>
                                 <li className={classnames("nav-item", {"active": active === formatMessage(messages["route.home"]) + "/#partner"})}>
                                     <Link messageId="route.home" hash="partner" className="nav-link">{formatMessage(messages.partner)}</Link>
+                                </li>
+                                <li className={classnames("nav-item", "disabled", {"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}>
+                                    <Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.tournament)}</Link>
+                                    <ul className="submenu">
+                                        <li className={classnames("disabled", {"active": active === "/de/turnier/teams"})}><Link to={{pathname: "/de/turnier/teams"}} className="nav-link">{formatMessage(messages.teams)}</Link></li>
+                                        <li className={classnames("disabled", {"active": active === "/de/turnier/spielplan"})}><Link to={{pathname: "/de/turnier/spielplan"}} className="nav-link">{formatMessage(messages.bracket)}</Link></li>
+                                        <li className={classnames({"active": active === formatMessage(messages["route.home"]) + "/#regeln" })}><Link messageId="route.home" hash="regeln" className="nav-link">{formatMessage(messages.ruleHeader)}</Link></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <LanguageSwitcher />
