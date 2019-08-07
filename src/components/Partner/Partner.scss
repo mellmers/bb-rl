@@ -1,34 +1,95 @@
+@import "./../../variables";
 .section.partner {
 
-  img {
-    max-height: 120px;
-    margin-bottom: 1rem;
+  $imgHeight: 100px;
+  $dividerHeight: 4px;
+  $skew: 10deg;
+
+  h2 {
+    margin-bottom: 40px;
   }
 
-  .inner > h2 {
-    margin-bottom: 50px;
+  .row > div {
+    margin-bottom: 25px;
+
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md - 1) {
+      &:nth-child(odd) .partner-card {
+        margin: 0 0 0 auto;
+      }
+      &:nth-child(even) .partner-card {
+        margin: 0 auto 0 0;
+      }
+    }
+
+    @media (min-width: $breakpoint-md) {
+      &:first-child .partner-card {
+        margin: 0 0 0 auto;
+      }
+      &:last-child .partner-card {
+        margin: 0 auto 0 0;
+      }
+    }
   }
 
-  a {
-    color: #fff;
-  }
-
-  .runtime, .merch-shop {
+  .partner-card {
+    display: block;
+    width: 100%;
+    max-width: 90%;
+    height: 600px;
+    margin: 0 auto;
+    color: $textColorLight;
+    background: linear-gradient(180deg, $backgroundBlue 0%, rgba(111,27,81,1) 60%, $highlightColor 100%);
     text-align: center;
-  }
+    box-shadow: -15px 15px 3px 0px rgba(0,0,0,.3);
+    transform: skewX(-$skew);
+    transition: .3s;
 
-  .merch-shop {
-    > a {
-      display: block;
-      margin-bottom: 1rem;
+    &:hover {
+      text-decoration: none;
+      transform: skewX(-$skew) scale(1.05);
     }
+
     img {
-      margin-bottom: 0;
-      max-height: 88px;
+      max-width: 80%;
+      transform: skewX($skew);
     }
-    h2 {
-      margin-bottom: 0;
-      line-height: 1;
+
+    .divider {
+      border-bottom: $dividerHeight solid $highlightColor;
+      width: 90%;
+      margin: 0 auto;
+      transform: skewX($skew);
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      height: calc(100% - #{$imgHeight} - #{$dividerHeight});
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        text-transform: uppercase;
+        text-shadow: -2px 2px 2px #000;
+        max-width: 90%;
+        transform: skewX($skew);
+      }
+    }
+
+    @media (max-width: $breakpoint-sm - 1) {
+      transform: skewX(0);
+      &:hover {
+        transform: scale(1.05);
+      }
+      img, .divider, ul li {
+        transform: skewX(0);
+      }
+    }
+
+    @media (min-width: 1250px) {
+      max-width: 100%;
     }
   }
 }
