@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import {injectIntl} from "react-intl";
 import Slider from "react-slick";
 import $ from "jquery";
+import Zoom from 'react-reveal/Zoom';
 
 import About from "../../components/About/About";
 import Counter from "../../components/Counter/Counter";
@@ -212,10 +213,12 @@ export class Home extends PureComponent {
 
                                 <div className="overlay"/>
 
-                                <div className="logo-wrapper" data-toggle="tooltip" data-placement="right" title="Zum Live-Stream" data-original-title="Zum Live-Stream">
-                                    {liveButton}
-                                    {logo}
-                                </div>
+                                <Zoom top delay={300} duration={2000}>
+                                    <div className="logo-wrapper" data-toggle="tooltip" data-placement="right" title="Zum Live-Stream" data-original-title="Zum Live-Stream">
+                                        {liveButton}
+                                        {logo}
+                                    </div>
+                                </Zoom>
 
                                 <Slider {...sliderSettings} >
                                     {sliderImages.map( (img, index) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 import {FormattedHTMLMessage, injectIntl} from "react-intl";
+import Fade from 'react-reveal/Fade';
 
 import messages from "../../i18n/messages";
 
@@ -17,28 +18,30 @@ class StreamTimes extends React.PureComponent {
 
                 <img src={banner} alt={formatMessage(messages.streamSchedule)} />
 
-                <ul>
-                    {/*
+                <Fade top delay={300} duration={2000}>
+                    <ul>
+                        {/*
+                            <li>
+                                <div className="day">{formatMessage(messages.monday)}</div>
+                                <div
+                                    className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
+                                <div className="streamer">Trippno - Marvin</div>
+                            </li>
+                        */}
+                            <li>
+                                <div className="day">{formatMessage(messages.tuesday)}</div>
+                                <div className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
+                                <div className="streamer">m4kar0ny - Patrick</div>
+                            </li>
+                        {/*
                         <li>
-                            <div className="day">{formatMessage(messages.monday)}</div>
-                            <div
-                                className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
-                            <div className="streamer">Trippno - Marvin</div>
+                            <div className="day">{formatMessage(messages.wednesday)}</div>
+                            <div className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
+                            <div className="streamer">xPainHunter - Malthe</div>
                         </li>
-                    */}
-                    <li>
-                        <div className="day">{formatMessage(messages.tuesday)}</div>
-                        <div className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
-                        <div className="streamer">m4kar0ny - Patrick</div>
-                    </li>
-                    {/*
-                    <li>
-                        <div className="day">{formatMessage(messages.wednesday)}</div>
-                        <div className="time">{formatMessage(messages.circa)} 19:30 {formatMessage(messages.to)} 23:00 {formatMessage(messages.clock)}</div>
-                        <div className="streamer">xPainHunter - Malthe</div>
-                    </li>
-                    */}
-                </ul>
+                        */}
+                    </ul>
+                </Fade>
                 {/*
                 <ul>
                     <li>

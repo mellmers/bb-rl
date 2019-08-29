@@ -8,7 +8,6 @@ import store from "./store";
 import $ from 'jquery';
 import 'bootstrap';
 import 'fullpage.js/dist/jquery.fullpage.min.css';
-import 'animate.css/animate.css';
 import iscroll from 'iscroll';
 
 window.jQuery = $;

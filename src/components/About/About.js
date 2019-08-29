@@ -1,5 +1,6 @@
 import React from 'react';
 import {FormattedHTMLMessage, injectIntl} from "react-intl";
+import Bounce from 'react-reveal/Bounce';
 
 import messages from "../../i18n/messages";
 import SquareCard from '../SquareCard/SquareCard';
@@ -36,26 +37,32 @@ class About extends React.PureComponent {
                         </div>
                         <div className="row">
                             <div className="col-12 col-sm-4">
-                                <SquareCard
-                                    image={streamtimes}
-                                    text={formatMessage(messages.aboutLink1)}
-                                    linkTo="route.schedule"
-                                />
+                                <Bounce top delay={300}>
+                                    <SquareCard
+                                        image={streamtimes}
+                                        text={formatMessage(messages.aboutLink1)}
+                                        linkTo="route.schedule"
+                                    />
+                                </Bounce>
                             </div>
                             <div className="col-12 col-sm-4">
-                                <SquareCard
-                                    image={kuehe}
-                                    text={<FormattedHTMLMessage {...messages.aboutLink2} />}
-                                    linkTo="route.contact"
-                                    linkText={formatMessage(messages.applyNow)}
-                                />
+                                <Bounce bottom delay={800}>
+                                    <SquareCard
+                                        image={kuehe}
+                                        text={<FormattedHTMLMessage {...messages.aboutLink2} />}
+                                        linkTo="route.contact"
+                                        linkText={formatMessage(messages.applyNow)}
+                                    />
+                                </Bounce>
                             </div>
                             <div className="col-12 col-sm-4">
-                                <SquareCard
-                                    image={setup}
-                                    text={formatMessage(messages.aboutLink3)}
-                                    linkTo="https://docs.google.com/document/d/1cQO5QDKdD0eSQG0GA1yMonL7T0TjIHBzxzlK8iShJRY/"
-                                />
+                                <Bounce top delay={1300}>
+                                    <SquareCard
+                                        image={setup}
+                                        text={formatMessage(messages.aboutLink3)}
+                                        linkTo="https://docs.google.com/document/d/1cQO5QDKdD0eSQG0GA1yMonL7T0TjIHBzxzlK8iShJRY/"
+                                    />
+                                </Bounce>
                             </div>
                         </div>
                     </div>
