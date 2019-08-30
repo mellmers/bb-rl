@@ -42,7 +42,7 @@ class Partner extends React.PureComponent {
                                     <ul>
                                         <li>Beste Sprachqualität</li>
                                         <li>Minimale CPU Auslastung</li>
-                                        <li>Erweiteres Rechtesystem</li>
+                                        <li>Erweitertes Rechtesystem</li>
                                         <li>Offline / LAN-Funktion</li>
                                         <li>Anonyme Nutzung</li>
                                         <li>Spam Frei</li>
