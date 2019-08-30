@@ -34,7 +34,7 @@ class NewsHomepage extends React.PureComponent {
                                 <li>Unübertroffene Sprachqualität</li>
                                 <li>Integrierter Datenschutz</li>
                                 <li>Sichere Verschlüsselung</li>
-                                <li>Erweiteres Rechte-System</li>
+                                <li>Erweitertes Rechte-System</li>
                                 <li>Interesse? Dann ab zu Teamspeak!</li>
                             </ul>
                             <Link messageId="route.home" hash="news" className="btn white read-more">Mehr lesen</Link>
