@@ -40,7 +40,7 @@ class Partner extends React.PureComponent {
                             </Flip>
                             <Flip left delay={800}>
                                 <div className="col-12 col-sm-6 col-md-4">
-                                    <a href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer" className="partner-card">
+                                    <a href="https://teamspeak.com/?utm_source=sponsor&utm_campaign=battleground-bulls" target="_blank" rel="noopener noreferrer" className="partner-card">
                                         <img src={Teamspeak_IMG} />
                                         <div className="divider"/>
                                         <ul>
