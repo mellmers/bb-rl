@@ -129,6 +129,8 @@
   "cookie.policy": "Cookies? Hier!",
   "language.english": "Englisch",
   "language.german": "Deutsch",
+  "news.heading.1": "Werde ein Bulle",
+  "news.text.1": "<li>Wir suchen dich!</li><li>Joine unserer Community</li><li>Spiele nie wieder mit Randoms</li><li>Viele Spiele zur Auswahl</li><li>Kostenloser Teamspeak</li><li>Diverse Gameserver</li>",
   "route.admin": "/de/admin",
   "route.adventCalendar": "/de/adventskalender",
   "route.bulls": "/de/bulls",

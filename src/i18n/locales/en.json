@@ -129,6 +129,8 @@
   "cookie.policy": "Cookies? Here!",
   "language.english": "English",
   "language.german": "German",
+  "news.heading.1": "Become a member",
+  "news.text.1": "<li>We want you!</li><li>Join our community</li><li>Never play with randoms</li><li>Many games</li><li>Free Teamspeak usage</li><li>Various gameserver</li>",
   "route.admin": "/en/admin",
   "route.adventCalendar": "/en/advent-calendar",
   "route.bulls": "/en/bulls",

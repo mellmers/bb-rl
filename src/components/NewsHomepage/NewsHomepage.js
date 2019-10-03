@@ -1,5 +1,5 @@
 import React from "react";
-import {injectIntl} from "react-intl";
+import {FormattedHTMLMessage, injectIntl} from "react-intl";
 import Slide from "react-reveal/Slide";
 
 import Link from "../../components/Link/Link";
@@ -18,16 +18,11 @@ class NewsHomepage extends React.PureComponent {
                     <div className="inner">
                         <Slide left>
                             <div className="card">
-                                <h2 className="heading">Werde ein Bulle</h2>
+                                <h2 className="heading">{formatMessage(messages.newsHeading1)}</h2>
                                 <ul>
-                                    <li>Wir suchen dich!</li>
-                                    <li>Joine unserer Community</li>
-                                    <li>Spiele nie wieder mit Randoms</li>
-                                    <li>Viele Spiele zur Auswahl</li>
-                                    <li>Kostenloser Teamspeak</li>
-                                    <li>Diverse Gameserver</li>
+                                    <FormattedHTMLMessage {...messages.newsText1} />
                                 </ul>
-                                <Link messageId="route.home" hash="news" className="btn white read-more">Mehr lesen</Link>
+                                <Link messageId="route.home" hash="news" className="btn white read-more">{formatMessage(messages.readMore)}</Link>
                             </div>
                         </Slide>
                         <Slide bottom>
@@ -41,7 +36,7 @@ class NewsHomepage extends React.PureComponent {
                                     <li>Erweitertes Rechte-System</li>
                                     <li>Interesse? Dann ab zu Teamspeak!</li>
                                 </ul>
-                                <Link messageId="route.home" hash="news" className="btn white read-more">Mehr lesen</Link>
+                                <Link messageId="route.home" hash="news" className="btn white read-more">{formatMessage(messages.readMore)}</Link>
                             </div>
                         </Slide>
                         <Slide right>
@@ -53,7 +48,7 @@ class NewsHomepage extends React.PureComponent {
                                     <li>Und fordere unsere Update-Info an</li>
                                     <li>Oder tritt unserem Discord bei</li>
                                 </ul>
-                                <Link messageId="route.home" hash="news" className="btn white read-more">Mehr lesen</Link>
+                                <Link messageId="route.home" hash="news" className="btn white read-more">{formatMessage(messages.readMore)}</Link>
                             </div>
                         </Slide>
                     </div>

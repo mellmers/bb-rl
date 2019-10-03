@@ -36,7 +36,7 @@
   },
   {
     "id": "app.aboutLink2",
-    "defaultMessage": "Wir suchen Mitglieder!<br/><span class=\"highlighted-text\">Bewirb</span> dich jetzt und werde ein <span class=\"highlighted-text\">Bulle</span>!",
+    "defaultMessage": "<span class='highlighted-text'>Wir suchen Mitglieder!</span><br/> Werde ein Bulle!",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -757,6 +757,16 @@
   {
     "id": "bulls.heading",
     "defaultMessage": "Das sind wir - die Bullen im Stall",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "news.heading.1",
+    "defaultMessage": "Werde ein Bulle",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "news.text.1",
+    "defaultMessage": "<li>Wir suchen dich!</li><li>Joine unserer Community</li><li>Spiele nie wieder mit Randoms</li><li>Viele Spiele zur Auswahl</li><li>Kostenloser Teamspeak</li><li>Diverse Gameserver</li>",
     "filepath": "src/i18n/messages.js"
   },
   {

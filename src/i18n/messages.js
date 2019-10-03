@@ -656,6 +656,25 @@ export default defineMessages({
         defaultMessage: 'Das sind wir - die Bullen im Stall'
     },
 
+
+    /**
+     * Section News
+     */
+    newsHeading1: {
+        id: 'news.heading.1',
+        defaultMessage: 'Werde ein Bulle'
+    },
+    newsText1: {
+        id: 'news.text.1',
+        defaultMessage:
+            '<li>Wir suchen dich!</li>' +
+            '<li>Joine unserer Community</li>' +
+            '<li>Spiele nie wieder mit Randoms</li>' +
+            '<li>Viele Spiele zur Auswahl</li>' +
+            '<li>Kostenloser Teamspeak</li>' +
+            '<li>Diverse Gameserver</li>'
+    },
+
     /**
      * Uhrzeit und Datum
      */
