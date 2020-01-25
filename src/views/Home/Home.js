@@ -35,6 +35,8 @@ import Partner_Spreadshirt from './img/partner/Spreadshirt.png';
 import Partner_Spreadshirt_Hightlight from './img/partner/Spreadshirt-Highlight.png';
 import Partner_Teamspeak from './img/partner/Teamspeak.png';
 import Partner_Teamspeak_Highlight from './img/partner/Teamspeak-Highlight.png';
+import Partner_GameWallpaper from './img/partner/GameWallpaper.png';
+import Partner_GameWallpaper_Highlight from './img/partner/GameWallpaper-Highlight.png';
 
 export class Home extends PureComponent {
 
@@ -250,6 +252,10 @@ export class Home extends PureComponent {
                             <a className="image-wrapper" href="https://teamspeak.com/?utm_source=sponsor&utm_campaign=battleground-bulls" target="_blank" rel="noopener noreferrer">
                                 <img src={Partner_Teamspeak} alt="Teamspeak" />
                                 <img className="highlight" src={Partner_Teamspeak_Highlight} alt="Teamspeak" />
+                            </a>
+                            <a className="image-wrapper" href="https://www.gamewallpapers.com/" target="_blank" rel="noopener noreferrer">
+                                <img src={Partner_GameWallpaper} alt="GameWallpaper" />
+                                <img className="highlight" src={Partner_GameWallpaper_Highlight} alt="GameWallpaper" />
                             </a>
                             <a className="image-wrapper" href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer">
                                 <img src={Partner_Spreadshirt} alt="Spreadshirt" />
