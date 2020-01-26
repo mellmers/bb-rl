@@ -46,9 +46,10 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "ftp-deploy": "^1.2.2",
-    "gulp": "^3.9.1",
-    "gulp-sftp": "^0.1.5",
-    "node-sass": "^4.12.0"
+    "gulp": "^4.0.2",
+    "gulp-sftp-up4": "^0.1.8",
+    "node-sass": "^4.12.0",
+    "serve": "^11.3.0"
   },
   "scripts": {
     "start": "set REACT_APP_DEVELOPMENT=true&&react-scripts start",

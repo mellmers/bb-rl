@@ -1,4 +1,4 @@
-const sftp = require('gulp-sftp');
+const sftp = require('gulp-sftp-up4');
 const keyfile = require('./key');
 
 let ftpHelper = {
