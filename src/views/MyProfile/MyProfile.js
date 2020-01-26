@@ -28,12 +28,13 @@ class MyProfile extends React.PureComponent {
         console.log("submit", formData);
         console.log("username valid?", this.state.usernameValid);
         if (this.state.usernameValid) {
-            API.getInstance()._fetch("/user/" + this.props.user.id + "/", "PATCH", formData, null, {
-                "Authorization": "Basic " + btoa(this.props.user.username + ":" + this.props.user.password)
+            API.getInstance()._fetch("/users/" + this.props.user.id + "/", "PATCH", formData, null, {
+                "Authorization": "Bearer " + this.props.user.accessToken
             })
                 .then(response => {
-                    console.log(response);
-                    this.props.dispatch(updateUser(response));
+                    if (response && !response.error) {
+                        this.props.dispatch(updateUser(response));
+                    }
                 });
         }
     }
@@ -64,13 +65,25 @@ class MyProfile extends React.PureComponent {
                                         placeholder="Bsp.: xPainHunt3r"
                                     />
                                 </div>
+                                <div className="col-md-6">
+                                    <label htmlFor="gamertag">Gamertag</label>
+                                    <input
+                                        type="text"
+                                        name="gamertag"
+                                        className="form-control"
+                                        id="gamertag"
+                                        maxLength={255}
+                                        placeholder="Gamertag"
+                                        defaultValue={user.profile.gamertag}
+                                    />
+                                </div>
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputName">Vorname</label>
                                     <input
                                         type="text"
-                                        name="firstName"
+                                        name="first_name"
                                         className="form-control"
                                         id="inputName"
                                         maxLength={255}
@@ -82,7 +95,7 @@ class MyProfile extends React.PureComponent {
                                     <label htmlFor="inputSecondName">Nachname</label>
                                     <input
                                         type="text"
-                                        name="lastName"
+                                        name="last_name"
                                         className="form-control"
                                         id="inputSecondName"
                                         maxLength={255}
@@ -126,7 +139,7 @@ class MyProfile extends React.PureComponent {
                                         dateFormat="YYYY-MM-DD"
                                         inputProps={{
                                             id: "birthday",
-                                            name: "birthday",
+                                            name: "birth_date",
                                             type: "date",
                                             placeholder: "Bsp.: 01.01.1990",
                                             autoComplete: "off"
@@ -139,10 +152,10 @@ class MyProfile extends React.PureComponent {
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="description">Dein Weg zu den Bullen:</label>
+                                    <label htmlFor="bio">Dein Weg zu den Bullen:</label>
                                     <textarea
-                                        name="description"
-                                        id="description"
+                                        name="bio"
+                                        id="bio"
                                         className="form-control"
                                         rows={4}
                                         placeholder="Ich bin bei den Bulls, weil ..."

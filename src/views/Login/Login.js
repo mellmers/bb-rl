@@ -41,10 +41,10 @@ class Login extends React.PureComponent {
                 }).then(user => {
                     if (user.id && user.username) {
                         let search = searchToObject(this.props.location.search);
-                        user = $.extend(user, { accessToken: auth.access, refreshToken: auth.refresh});
-                        console.log(user);
+                        user = $.extend(user, { accessToken: auth.access, refreshToken: auth.refresh });
+                        console.log('User logged in:', user);
 
-                        this.props.dispatch(login($.extend(user, {password: formData.password})));
+                        this.props.dispatch(login(user));
                         this.props.history.push(search.next || "/" + this.props.language);
                     }
                 }).catch(error => {

@@ -80,7 +80,7 @@ export default class API {
     }
 
     _parseJson(response) {
-        return includes([204, 409], response.status) ? { status: response.status } : response.json()
+        return includes([204, 401, 409], response.status) ? { status: response.status, error: true, message: response.statusText } : response.json()
     }
 
     _parseError(error) {

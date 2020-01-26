@@ -172,7 +172,7 @@ class Header extends React.PureComponent {
                                         <button className="username" onClick={this.toggleUserSidebar}><i className="fas fa-user"/>{user.username}</button>
                                     </li>
                                 ) : (
-                                    <li className="nav-item disabled">
+                                    <li className="nav-item">
                                         <i className="fas fa-user d-none d-lg-inline-block" /> <Link messageId="route.login" className="nav-link">{formatMessage(messages.login)}</Link>|<Link messageId="route.register" className="nav-link">{formatMessage(messages.signIn)}</Link>
                                     </li>
                                 )}
