@@ -5,18 +5,14 @@ gulp.task('upload', function (resolve) {
     let conn = ftpHelper.getConn({
         path: 'web/battleground-bulls.de'
     });
-    gulp.src('build/**')
+    return gulp.src('build/**')
         .pipe(conn);
-
-    resolve();
 });
 
 gulp.task('uploadDev', function (resolve) {
     let conn = ftpHelper.getConn({
         path: 'web/dev.battleground-bulls.de'
     });
-    gulp.src('build/**')
+    return gulp.src('build/**')
         .pipe(conn);
-
-    resolve();
 });
