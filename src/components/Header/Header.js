@@ -8,6 +8,7 @@ import $ from "jquery";
 import LanguageSwitcher from "../../components/LanguageSwitcher/LanguageSwitcher";
 import Link from "../../components/Link/Link";
 
+import API from "./../../utils/API";
 import {logout} from "../../actions/ApplicationActions";
 import messages from "../../i18n/messages";
 
@@ -185,7 +186,7 @@ class Header extends React.PureComponent {
                         <li><Link messageId="route.myProfile"><i className="fas fa-address-card" />{formatMessage(messages.myProfile)}</Link></li>
                         {/*<li><Link to="/einstellungen"><i className="fas fa-cog" />{formatMessage(messages.settings)}</Link></li>*/}
                         <li><Link messageId="route.calendar"><i className="far fa-calendar-alt" />{formatMessage(messages.calendar)}</Link></li>
-                        <li onClick={() => { this.props.dispatch(logout()); }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />{formatMessage(messages.logout)}</Link></li>
+                        <li onClick={() => { this.props.dispatch(logout()); API.getInstance().logout() }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />{formatMessage(messages.logout)}</Link></li>
                     </ul>
                     <div ref="backdrop" className="backdrop" />
                 </div>

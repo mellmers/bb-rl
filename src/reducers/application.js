@@ -1,7 +1,6 @@
 import {DEFAULT_LANG} from "../i18n/supportedLanguages";
 
 import {APPLICATION_LOGIN, APPLICATION_LOGOUT, APPLICATION_UPDATE_USER, APPLICATION_SET_LANGUAGE} from "../constants";
-import $ from "jquery";
 
 const initialState = {
     language: DEFAULT_LANG,

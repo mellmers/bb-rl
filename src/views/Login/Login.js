@@ -30,30 +30,15 @@ class Login extends React.PureComponent {
         e.preventDefault();
         let formData = $("form").serializeObject();
 
-        API.getInstance()._fetch("/api/token/", "POST", {
-            username: formData.username,
-            password: formData.password,
-        }, null, null).then(auth => {
-            console.log(auth);
-            if (auth.access && auth.refresh) {
-                API.getInstance()._fetch("/users/me/", "GET", null, null, {
-                    "Authorization": "Bearer " + auth.access
-                }).then(user => {
-                    if (user.id && user.username) {
-                        let search = searchToObject(this.props.location.search);
-                        user = $.extend(user, { accessToken: auth.access, refreshToken: auth.refresh });
-                        console.log('User logged in:', user);
-
-                        this.props.dispatch(login(user));
-                        this.props.history.push(search.next || "/" + this.props.language);
-                    }
-                }).catch(error => {
-                    this.setState({ error: error });
-                });
-            }
-        }).catch(error => {
-            this.setState({ error: error });
-        });
+        API.getInstance().login(formData)
+            .then( user => {
+                let search = searchToObject(this.props.location.search);
+                this.props.dispatch(login(user));
+                this.props.history.push(search.next || "/" + this.props.language);
+            })
+            .catch( error => {
+                this.setState({error: error });
+            });
     }
 
     renderAccessDenied() {
