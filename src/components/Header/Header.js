@@ -159,7 +159,7 @@ class Header extends React.PureComponent {
                             <LanguageSwitcher />
                             <ul className="navbar-nav d-none d-xl-flex socials">
                                 <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://discord.gg/gke2aYp" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://discord.gg/9psnFwb" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://instagram.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://twitter.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/groups/BattlegroundBuLLs/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" /></a></li>

@@ -71,7 +71,7 @@
   "app.signUpNow": "Sign up now",
   "app.status": "Status",
   "app.streamSchedule": "Schedule",
-  "app.streamScheduleNote": "All other days we stream spontaneously.<br/>The times given may vary.<br/>Changes are reported in Discord!",
+  "app.streamScheduleNote": "All other days we stream spontaneously.<br/>The times given may vary.<br/>Changes are reported in <a href=\"https://discord.gg/9psnFwb\" target=\"_blank\" rel=\"noopener noreferrer\">Discord</a>!",
   "app.teams": "Teams",
   "app.toTwitch": "Visit our Twitch-Channel",
   "app.tournament": "Tournament",

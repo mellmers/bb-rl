@@ -24,7 +24,7 @@ class StreamTimes extends React.PureComponent {
                             <div className="day">{formatMessage(messages.monday)}</div>
                             <div
                                 className="time">{formatMessage(messages.around)} 19:30 {formatMessage(messages.clock)}</div>
-                            <div className="streamer">Trippno - Marvin</div>
+                            <div className="streamer">Trippno<br/>Marvin</div>
                         </li>
                         {/*
                         <li>
@@ -36,7 +36,7 @@ class StreamTimes extends React.PureComponent {
                         <li>
                             <div className="day">{formatMessage(messages.wednesday)}</div>
                             <div className="time">{formatMessage(messages.around)} 19:30</div>
-                            <div className="streamer">DesperateChaos - Katrin</div>
+                            <div className="streamer">DesperateChaos<br/>Katrin</div>
                         </li>
                         {/*
                         <li>
@@ -48,7 +48,7 @@ class StreamTimes extends React.PureComponent {
                         <li>
                             <div className="day">{formatMessage(messages.friday)}</div>
                             <div className="time">{formatMessage(messages.around)} 19:30 {formatMessage(messages.clock)}</div>
-                            <div className="streamer">xPainHunter - Malthe</div>
+                            <div className="streamer">xPainHunter<br/>Malthe</div>
                         </li>
                     </ul>
                     <ul>
