@@ -21,7 +21,7 @@ class UsernameInput extends React.PureComponent {
         clearTimeout(this.usernameChangeTimeout);
         this.usernameChangeTimeout = setTimeout(() => {
             let username = input.val();
-            API.getInstance()._fetch("/user/checkUsername", "POST", {username: username})
+            API.getInstance()._fetch("/users/verify-username/", "POST", {username: username})
                 .always(response => {
                     this.setState({ usernameStatus: response.status });
                     if (this.props.onChange) {

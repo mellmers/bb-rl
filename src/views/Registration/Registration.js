@@ -5,6 +5,7 @@ import $ from "jquery";
 import {Helmet} from "react-helmet";
 
 import UsernameInput from "../../components/UsernameInput/UsernameInput";
+import RequiredHint from "../../components/Form/RequiredHint";
 
 import {login} from "../../actions/ApplicationActions";
 import {searchToObject} from "../../utils/helperFunctions";
@@ -78,7 +79,7 @@ class Registration extends React.PureComponent {
                             <h1>Registrierung</h1>
 
                             <form ref="form" onSubmit={this.onSubmit}>
-                                <div className="required-text">Die mit <span className="required">*</span> gekennzeichneten Felder bitte ausfüllen.</div>
+                                <RequiredHint />
                                 <div className="form-group">
                                     <label htmlFor="mail">E-Mail-Adresse</label>
                                     <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder="E-Mail-Adresse"/>
