@@ -36,7 +36,7 @@
   },
   {
     "id": "app.aboutLink2",
-    "defaultMessage": "Wir suchen Mitglieder!<br/><span class=\"highlighted-text\">Bewirb</span> dich jetzt und werde ein <span class=\"highlighted-text\">Bulle</span>!",
+    "defaultMessage": "<span class='highlighted-text'>Wir suchen Mitglieder!</span><br/> Werde ein Bulle!",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -792,6 +792,21 @@
   {
     "id": "weekday.sunday",
     "defaultMessage": "Sonntag",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "time.duringWeekend",
+    "defaultMessage": "Am Wochenende",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "time.spontaneously",
+    "defaultMessage": "spontan",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "time.around",
+    "defaultMessage": "ab ca.",
     "filepath": "src/i18n/messages.js"
   },
   {

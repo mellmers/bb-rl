@@ -687,6 +687,18 @@ export default defineMessages({
         id: 'weekday.sunday',
         defaultMessage: 'Sonntag'
     },
+    duringWeekend: {
+        id: 'time.duringWeekend',
+        defaultMessage: 'Am Wochenende'
+    },
+    spontaneously: {
+        id: 'time.spontaneously',
+        defaultMessage: 'spontan'
+    },
+    around: {
+        id: 'time.around',
+        defaultMessage: 'ab ca.'
+    },
     from: {
         id: 'time.from',
         defaultMessage: 'von'
