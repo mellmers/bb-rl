@@ -5,6 +5,7 @@ import $ from "jquery";
 
 import ServerDetailView from "../../components/ServerDetailView/ServerDetailView";
 
+import {LINK_TWITCH} from "../../constants";
 import messages from "../../i18n/messages";
 
 import ScumLogo from "./img/scum-logo.png";
@@ -45,7 +46,7 @@ class Scum extends React.PureComponent {
 
                     <div className="row">
                         <div className="col-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-                            <a href="https://www.twitch.tv/BattleBullsTV" className="btn large twitch" target="_blank" rel="noopener noreferrer">{formatMessage(messages.btnTwitch)}</a>
+                            <a href={LINK_TWITCH} className="btn large twitch" target="_blank" rel="noopener noreferrer">{formatMessage(messages.btnTwitch)}</a>
                         </div>
                     </div>
 

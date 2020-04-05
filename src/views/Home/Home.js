@@ -13,6 +13,7 @@ import NewsHomepage from "../../components/NewsHomepage/NewsHomepage";
 import Partner from "../../components/Partner/Partner";
 import Rules from "../../components/Rules/Rules";
 
+import {TWITCH_CHANNEL_NAME} from "../../constants";
 import API from "../../utils/API";
 
 import messages from "../../i18n/messages";
@@ -127,7 +128,7 @@ export class Home extends PureComponent {
 
     checkBBStreamIsOnline () {
         // Request stream and look if stream is online
-        API.getInstance()._fetch("https://api.twitch.tv/helix/streams?user_login=BattleBullsTV", "GET", null, null, {"Client-ID": "swviygtzpvpvtpm5r79410wd6221th"}).then(json => {
+        API.getInstance()._fetch("https://api.twitch.tv/helix/streams?user_login=" + TWITCH_CHANNEL_NAME, "GET", null, null, {"Client-ID": "swviygtzpvpvtpm5r79410wd6221th"}).then(json => {
             let live = false;
             if (json.data && json.data.length > 0) {
                 live = true;
@@ -168,7 +169,7 @@ export class Home extends PureComponent {
                         autoplay: true,
                         layout: "video-with-chat",
                         width: 3000,
-                        channel: "BattleBullsTV"
+                        channel: TWITCH_CHANNEL_NAME
                     });
                     $(this.refs.fullpage).find("#twitch-embed-bb").delay(1000).fadeIn();
                     break;
@@ -337,7 +338,7 @@ export class Home extends PureComponent {
                                     {this.state.showRegistrationBtn ? <Link messageId="route.tournamentRegistration" params={{teams: ""}} className="btn primary">{formatMessage(messages.signUpNow)}</Link> : null}
                                     {/*<Link messageId="route.adventCalendar" className="btn primary">{formatMessage(messages.adventCalendar)}</Link>*/}
                                     {/*<Link messageId="route.schedule" className="btn primary">{formatMessage(messages.streamSchedule)}</Link>*/}
-                                    {/*<a href="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>*/}
+                                    {/*<a href={LINK_DISCORD} className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>*/}
                                 </div>
                             </div>
                             <a className="image-wrapper" href="https://www.gamewallpapers.com/" target="_blank" rel="noopener noreferrer">

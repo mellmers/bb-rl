@@ -8,6 +8,7 @@ import $ from "jquery";
 import LanguageSwitcher from "../../components/LanguageSwitcher/LanguageSwitcher";
 import Link from "../../components/Link/Link";
 
+import {LINK_DISCORD, LINK_FACEBOOK, LINK_INSTAGRAM, LINK_TWITCH, LINK_TWITTER, LINK_YOUTUBE} from "../../constants";
 import API from "./../../utils/API";
 import {logout} from "../../actions/ApplicationActions";
 import messages from "../../i18n/messages";
@@ -160,12 +161,12 @@ class Header extends React.PureComponent {
                             </ul>
                             <LanguageSwitcher />
                             <ul className="navbar-nav d-none d-xl-flex socials">
-                                <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/BattleBullsTV" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://discord.gg/9psnFwb" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://instagram.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://twitter.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/groups/BattlegroundBuLLs/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href={LINK_TWITCH} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href={LINK_DISCORD} target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href={LINK_INSTAGRAM} target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href={LINK_TWITTER} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href={LINK_FACEBOOK} target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href={LINK_YOUTUBE} target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
                             </ul>
                             <ul ref="navSignIn" className="navbar-nav sign-in">
                                 {user ? (

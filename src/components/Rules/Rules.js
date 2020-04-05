@@ -2,7 +2,10 @@ import React from 'react';
 import $ from 'jquery';
 import {FormattedHTMLMessage, injectIntl} from "react-intl";
 import messages from "../../i18n/messages";
+
 import Link from "../Link/Link";
+
+import {LINK_TWITCH} from "../../constants";
 
 class Rules extends React.PureComponent {
 
@@ -61,7 +64,7 @@ class Rules extends React.PureComponent {
                             <p>
                                 <FormattedHTMLMessage {...messages.ruleProcedure}/>
                             </p>
-                            <p><a className="link-dark" href="https://www.twitch.tv/BattleBullsTV" target="_blank" rel="noopener noreferrer">{formatMessage(messages.toTwitch)}</a></p>
+                            <p><a className="link-dark" href={LINK_TWITCH} target="_blank" rel="noopener noreferrer">{formatMessage(messages.toTwitch)}</a></p>
                         </div>
 
                         <div className="collapsed" data-toggle="collapse" data-target="#commands" role="button"
