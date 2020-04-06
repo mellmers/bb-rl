@@ -9,11 +9,17 @@ class Admin extends React.PureComponent {
     }
 
     render() {
-        console.log(this.props.user);
         return (
-            <div className="container admin-view">
+            <div className="view full-container" style={{ paddingTop: "0" }}>
                 <Helmet><title>Admin - BattleBulls</title></Helmet>
-                <h1>Admin panel</h1>
+                <iframe
+                    src="http://localhost:3001/"
+                    style={{
+                        width: "100%",
+                        height: "calc(100vh - 62px)",
+                        border: "none"
+                    }}
+                />
             </div>
         );
     }

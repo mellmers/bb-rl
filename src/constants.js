@@ -1,6 +1,6 @@
 export const API_ROUTE = "https://battlebulls.de:8000";
 export const API_ROUTE_DEV = "https://battlebulls.de:9000";
-export const API_ROUTE_LOCAL = "http://localhost:9000";
+export const API_ROUTE_LOCAL = "http://localhost:3030";
 export const API_ROUTE_LOCAL_PROD = "http://localhost:8000";
 
 export const ERROR_PASSWORD_NOT_EQUAL = "password_not_equal";

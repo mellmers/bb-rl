@@ -160,7 +160,7 @@ class App extends React.PureComponent {
                         <main>
                             <Switch>
                                 <Route path={messages["route.home"]} component={withTracker(Home)} exact/>
-                                <Route path={messages["route.admin"]} component={withTracker(requireAuthentication(Admin, "ROLE_ADMIN"))} exact/>
+                                <Route path={messages["route.admin"]} component={withTracker(requireAuthentication(Admin, "admin"))} exact/>
                                 <Route path={messages["route.privacy"]} component={withTracker(Privacy)} exact/>
                                 <Route path={messages["route.imprint"]} component={withTracker(Imprint)} exact/>
                                 <Route path={messages["route.login"]} component={withTracker(Login)} exact/>

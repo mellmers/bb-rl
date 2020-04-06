@@ -43,7 +43,7 @@ class Login extends React.PureComponent {
 
     renderAccessDenied() {
         let search = searchToObject(this.props.location.search);
-        return search.role ? (
+        return search.auth && search.auth === "forbidden" ? (
             <div className="access-denied">
                 <Helmet><title>Zugriff verweigert - BattleBulls</title></Helmet>
                 <div className="alert alert-danger">

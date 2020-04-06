@@ -14,8 +14,8 @@ export default function requireAuthentication(ChildComponent, role = null) {
             if (user !== null && user.username) {
                 render = <ChildComponent {...this.props} />;
             }
-            if (role && user && user.role && user.role.role !== role) {
-                render = <Redirect push={true} to={formatMessage(messages["route.login"]) + "?role=" + role + (this.props.location.pathname !== "" ? '&next=' + this.props.location.pathname : "")}/>;
+            if (role && user && !user.permissions.includes(role)) {
+                render = <Redirect push={true} to={formatMessage(messages["route.login"]) + "?auth=forbidden" + (this.props.location.pathname !== "" ? '&next=' + this.props.location.pathname : "")}/>;
             }
             return render;
         }

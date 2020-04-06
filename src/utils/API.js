@@ -23,10 +23,17 @@ export default class API {
 
     async login(data) {
         return new Promise( (resolve, reject) => {
-            this._fetch("/token/", "POST", {
+            this._fetch("/authentication/", "POST", {
                 username: data.username,
                 password: data.password,
+                strategy: "local"
             }, null, null).then(auth => {
+                if (auth.user) {
+                    this.user = auth.user;
+                    resolve(auth.user);
+                }
+
+                /* ACCESS TOKEN
                 if (auth.access && auth.refresh) {
                     this._fetch("/users/me/", "GET", null, null, {
                         "Authorization": "Bearer " + auth.access
@@ -41,6 +48,7 @@ export default class API {
                         reject({error: this._parseError(error)});
                     });
                 }
+                */
             }).catch(error => {
                 reject({error: this._parseError(error)});
             });
