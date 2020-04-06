@@ -11,7 +11,7 @@ export const COOKIE_COOKIECONSENT_STATUS = "cookieconsent_status";
 export const COOKIE_OPT_OUT = "ga_opt_out";
 
 // Links & Social
-export const LINK_DISCORD = "https://discord.gg/gke2aYp";
+export const LINK_DISCORD = "https://discord.gg/9psnFwb";
 export const LINK_FACEBOOK = "https://www.facebook.com/groups/BattlegroundBuLLs/";
 export const LINK_INSTAGRAM = "https://instagram.com/BattleBulls";
 export const LINK_TWITTER = "https://twitter.com/BattleBulls";
