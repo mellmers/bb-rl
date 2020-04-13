@@ -21,28 +21,43 @@ class UsernameInput extends React.PureComponent {
         clearTimeout(this.usernameChangeTimeout);
         this.usernameChangeTimeout = setTimeout(() => {
             let username = input.val();
-            API.getInstance()._fetch("/users/verify-username/", "POST", {username: username})
+            API.getInstance()._fetch("/users/?username=" + username)
                 .always(response => {
-                    this.setState({ usernameStatus: response.status });
+                    const usernameAvailable = response.code === 200;
+                    let usernameValid = true;
+                    this.setState({usernameStatus: response.code});
                     if (this.props.onChange) {
-                        this.props.onChange(response.status === 204);
+                        this.props.onChange(usernameAvailable && usernameValid);
                     }
                 });
         }, 500);
     }
 
+    renderAlert() {
+        let { usernameStatus } = this.state,
+            alert = null;
+
+        switch (usernameStatus) {
+            case 200:
+                alert = <div className="alert alert-success" role="alert">Benutzername ist verfügbar</div>;
+                break;
+            case 409:
+                alert = <div className="alert alert-danger" role="alert">Benutzername ist leider schon vergeben</div>;
+                break;
+        }
+
+        // TODO: Validierung - z.B. Mindestzeichenlänge
+
+        return alert;
+    }
+
     render() {
-        let { usernameStatus } = this.state;
         let { className, defaultValue, placeholder, user} = this.props;
         return (
             <div className={"form-group" + (className ? " " + className : "")}>
                 <label htmlFor="username">Benutzername <span className="required">*</span></label>
                 <input type="text" className="form-control" id="username" name="username" defaultValue={defaultValue ? user.username : ""} placeholder={placeholder ? placeholder : "Benutzername"} onChange={this.onUsernameChange} maxLength={255} required/>
-                {usernameStatus ? usernameStatus === 204 ? (
-                    <div className="alert alert-success" role="alert">Benutzername ist verfügbar</div>
-                ) : (
-                    <div className="alert alert-danger" role="alert">Benutzername ist leider schon vergeben</div>
-                ) : null}
+                {this.renderAlert()}
             </div>
         );
     }
@@ -50,7 +65,7 @@ class UsernameInput extends React.PureComponent {
 UsernameInput.propTypes = {
     className: PropTypes.string,
     defaultValue: PropTypes.bool,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func,       // Is username available and valid?
     placeholder: PropTypes.string
 };
 function mapStateToProps(state, props) {

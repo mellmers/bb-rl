@@ -63,11 +63,14 @@ export default class API {
         let dfr = $.Deferred();
 
         if (url.indexOf("http") === -1) {
-            header = $.extend({}, {
-                "Accept": "application/json",
-                "Content-Type": contentType,
-                "Authorization": this.user ? "Bearer " + this.user.accessToken : null
-            }, header);
+            let defaultHeaders = {
+              "Accept": "application/json",
+              "Content-Type": contentType
+            };
+            if (this.user) {
+              defaultHeaders.Authorization = "Bearer " + this.user.accessToken;
+            }
+            header = $.extend({}, defaultHeaders, header);
             if (process.env.REACT_APP_API === "local") {
                 url = CONSTANTS.API_ROUTE_LOCAL + url;
             } else if (process.env.REACT_APP_API === "dev") {

@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import $ from "jquery";
 import {Helmet} from "react-helmet";
+import cloneDeep from "lodash/cloneDeep";
 
 import UsernameInput from "../../components/UsernameInput/UsernameInput";
 import RequiredHint from "../../components/Form/RequiredHint";
@@ -10,17 +11,19 @@ import RequiredHint from "../../components/Form/RequiredHint";
 import {login} from "../../actions/ApplicationActions";
 import {searchToObject} from "../../utils/helperFunctions";
 import API from "./../../utils/API";
-import {ERROR_PASSWORD_NOT_EQUAL} from "./../../constants";
+import {ERROR_PASSWORD_NOT_EQUAL, ERROR_PASSWORD_REGEX} from "./../../constants";
 
 import "./Registration.css";
 
 class Registration extends React.PureComponent {
 
+    initialErrors = { password: [] };
+
     constructor(props) {
         super(props);
 
         this.state = {
-            errors: null,
+            errors: cloneDeep(this.initialErrors),
             usernameValid: false
         };
 
@@ -34,42 +37,65 @@ class Registration extends React.PureComponent {
     onSubmit(e) {
         e.preventDefault();
 
-        let formData = $(this.refs.form).serializeObject();
+        let formData = $(this.refs.form).serializeObject(),
+            errors = cloneDeep(this.initialErrors);
 
-        this.setState({ errors: null });
-
-        if (this.state.usernameValid && formData.password1 === formData.password2) {
-            API.getInstance()._fetch("/user", "POST", {
-                mail: formData.mail,
-                password: formData.password1,
-                username: formData.username
-            }).then(response => {
-                if (response.id) {
-                    let search = searchToObject(this.props.location.search);
-                    this.props.dispatch(login(response));
-                    this.props.history.push(search.next || "/" + this.props.language);
-                }
-            });
-        } else if (formData.password1 !== formData.password2) {
-            this.setState({ errors: {password: ERROR_PASSWORD_NOT_EQUAL} });
+        if (!this.state.usernameValid) {
+            return;
         }
+
+        if (formData.password1 !== formData.password2) {
+            errors.password.push(ERROR_PASSWORD_NOT_EQUAL);
+        }
+
+        // Password regex: min. 8 chars, one number, one uppercase and one lowercase letter
+        if (formData.password1.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,255}$/) === null) {
+            errors.password.push(ERROR_PASSWORD_REGEX);
+        }
+
+        if (JSON.stringify(errors) !== JSON.stringify(this.initialErrors)) { // set errors and cancel submit
+            this.setState({errors: errors});
+            return;
+        } else if (JSON.stringify(this.state.errors) !== JSON.stringify(this.initialErrors)) { // reset errors, if currently no errors occur
+            this.setState({errors: errors});
+        }
+
+        // If all conditions valid, register user
+        API.getInstance()._fetch("/users", "POST", {
+            email: formData.mail,
+            password: formData.password1,
+            username: formData.username
+        }).then(response => {
+            if (response._id) {
+                let search = searchToObject(this.props.location.search);
+                this.props.dispatch(login(response));
+                this.props.history.push(search.next || "/" + this.props.language);
+            }
+        });
+    }
+
+    renderPasswordError() {
+        let { errors } = this.state;
+        let passwordErrorDiv = [],
+            passwordErrorText = null;
+        if (errors.password.length > 0) {
+            errors.password.forEach(error => {
+                switch (error) {
+                    case ERROR_PASSWORD_NOT_EQUAL:
+                        passwordErrorText = "Die Passwörter stimmen nicht überein.";
+                        break;
+                    case ERROR_PASSWORD_REGEX:
+                        passwordErrorText = "Das Passwort sollte mindestens 8 Zeichen lang sein, eine nummerische Ziffer, einen Groß- und einen Kleinbuchstaben enthalten.";
+                        break;
+                }
+                passwordErrorDiv.push(<div className="alert alert-danger">{passwordErrorText}</div>);
+            });
+        }
+
+        return passwordErrorDiv;
     }
 
     render() {
-        let { errors } = this.state;
-        let passwordErrorDiv = null,
-            passwordErrorText = null;
-        if (errors && errors.password) {
-            switch (errors.password) {
-                case ERROR_PASSWORD_NOT_EQUAL:
-                    passwordErrorText = "Die Passwörter stimmen nicht überein";
-                    break;
-                default:
-                    passwordErrorText = "Ups, etwas ist schiefgelaufen. Bitte wende dich an einen Admin.";
-                    break;
-            }
-            passwordErrorDiv = <div className="alert alert-danger">{passwordErrorText}</div>;
-        }
         return (
             <div className="view full-container registration">
                 <div className="container">
@@ -93,7 +119,7 @@ class Registration extends React.PureComponent {
                                 <div className="form-group">
                                     <label htmlFor="password2">Passwort wiederholen <span className="required">*</span></label>
                                     <input type="password" className="form-control" id="password2" name="password2" placeholder="Passwort wiederholen" required/>
-                                    {passwordErrorDiv}
+                                    {this.renderPasswordError()}
                                 </div>
                                 <div className="form-check">
                                     <input type="checkbox" className="form-check-input" id="privacy" required/>
