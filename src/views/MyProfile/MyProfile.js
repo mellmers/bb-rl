@@ -28,7 +28,7 @@ class MyProfile extends React.PureComponent {
         console.log("submit", formData);
         console.log("username valid?", this.state.usernameValid);
         if (this.state.usernameValid) {
-            API.getInstance()._fetch("/users/" + this.props.user.id + "/", "PATCH", formData, null, {
+            API.getInstance()._fetch("/users/" + this.props.user._id + "/", "PATCH", formData, null, {
                 "Authorization": "Bearer " + this.props.user.accessToken
             })
                 .then(response => {
@@ -66,41 +66,41 @@ class MyProfile extends React.PureComponent {
                                     />
                                 </div>
                                 <div className="col-md-6">
-                                    <label htmlFor="gamertag">Gamertag</label>
+                                    <label htmlFor="gamertag">In-Game Alias</label>
                                     <input
                                         type="text"
                                         name="gamertag"
                                         className="form-control"
                                         id="gamertag"
                                         maxLength={255}
-                                        placeholder="Gamertag"
-                                        defaultValue={user.profile.gamertag}
+                                        placeholder="In-Game Alias"
+                                        defaultValue={user.gamertag}
                                     />
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputName">Vorname</label>
+                                    <label htmlFor="inputFirstName">Vorname</label>
                                     <input
                                         type="text"
-                                        name="first_name"
+                                        name="firstName"
                                         className="form-control"
-                                        id="inputName"
+                                        id="inputFirstName"
                                         maxLength={255}
                                         placeholder="Vorname"
-                                        defaultValue={user.first_name}
+                                        defaultValue={user.firstName}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputSecondName">Nachname</label>
+                                    <label htmlFor="inputLastName">Nachname</label>
                                     <input
                                         type="text"
-                                        name="last_name"
+                                        name="lastName"
                                         className="form-control"
-                                        id="inputSecondName"
+                                        id="inputLastName"
                                         maxLength={255}
                                         placeholder="Nachname"
-                                        defaultValue={user.last_name}
+                                        defaultValue={user.lastName}
                                     />
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputHome"
                                         maxLength={255}
                                         placeholder="Bsp.: Bremen"
-                                        defaultValue={user.profile.city}
+                                        defaultValue={user.city}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -123,7 +123,7 @@ class MyProfile extends React.PureComponent {
                                         name="country"
                                         className="form-control"
                                         id="inputLand"
-                                        defaultValue={user.profile.country}
+                                        defaultValue={user.country}
                                     >
                                         <option>Deutschland</option>
                                         <option>Österreich</option>
@@ -133,19 +133,20 @@ class MyProfile extends React.PureComponent {
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="birthday">Geburtstag</label>
+                                    <label htmlFor="birthDate">Geburtstag</label>
                                     <DateTime
                                         closeOnSelect={true}
                                         dateFormat="YYYY-MM-DD"
                                         inputProps={{
-                                            id: "birthday",
-                                            name: "birth_date",
+                                            id: "birthDate",
+                                            name: "birthDate",
                                             type: "date",
                                             placeholder: "Bsp.: 01.01.1990",
                                             autoComplete: "off"
                                         }}
+                                        onChange={date => {this.setState({birthDate: new Date(date)})}}
                                         timeFormat={false}
-                                        value={user.profile.birth_date || this.state.birthday}
+                                        value={this.state.birthDate || new Date(user.birthDate)}
                                         viewMode="years"
                                     />
                                 </div>
@@ -159,14 +160,14 @@ class MyProfile extends React.PureComponent {
                                         className="form-control"
                                         rows={4}
                                         placeholder="Ich bin bei den Bulls, weil ..."
-                                        defaultValue={user.profile.bio}
+                                        defaultValue={user.bio}
                                     />
                                 </div>
                             </div>
                             <div className="form-row actions">
                                 <div className="form-group col-md-6">
                                     <button type="submit" className="btn white">Speichern</button>
-                                    <button type="reset" className="btn white" onClick={()=>{this.setState({birthday: ""})}}>Zurücksetzen</button>
+                                    <button type="reset" className="btn white" onClick={()=>{this.setState({birthDate: ""})}}>Zurücksetzen</button>
                                 </div>
                             </div>
                         </form>
@@ -233,7 +234,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputFavourite"
                                         maxLength={255}
                                         placeholder="Bsp.: PUBG, CS:GO, Rocket League"
-                                        defaultValue={user.profile.games}
+                                        defaultValue={user.games}
                                     />
                                 </div>
                             </div>
@@ -247,7 +248,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputClan"
                                         maxLength={255}
                                         placeholder="Bsp.: BattleBulls"
-                                        defaultValue={user.profile.clan}
+                                        defaultValue={user.clan}
                                     />
                                 </div>
                             </div>
