@@ -28,8 +28,8 @@ export default class API {
                 password: data.password,
                 strategy: "local"
             }, null, null).then(auth => {
-                if (auth.user) {
-                    this.user = auth.user;
+                if (auth && auth.accessToken && auth.user) {
+                    this.user = $.extend(auth.user, { accessToken: auth.accessToken });
                     resolve(auth.user);
                 }
 
@@ -68,6 +68,7 @@ export default class API {
               "Content-Type": contentType
             };
             if (this.user) {
+                console.log(this.user)
               defaultHeaders.Authorization = "Bearer " + this.user.accessToken;
             }
             header = $.extend({}, defaultHeaders, header);
