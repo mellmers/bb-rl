@@ -24,7 +24,11 @@ class MyProfile extends React.PureComponent {
 
     onSubmit(e) {
         e.preventDefault();
-        let formData = $(e.target).serializeObject();
+        let form = $(e.target);
+        let formData = form.serializeObject();
+        if (form.parent().attr("id") === "hardware") {
+            formData = { hardware: formData };
+        }
         console.log("submit", formData);
         console.log("username valid?", this.state.usernameValid);
         if (this.state.usernameValid) {
@@ -65,6 +69,7 @@ class MyProfile extends React.PureComponent {
                                         placeholder="Bsp.: xPainHunt3r"
                                     />
                                 </div>
+                                {/*
                                 <div className="col-md-6">
                                     <label htmlFor="gamertag">In-Game Alias</label>
                                     <input
@@ -77,6 +82,7 @@ class MyProfile extends React.PureComponent {
                                         defaultValue={user.gamertag}
                                     />
                                 </div>
+                                */}
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
@@ -132,6 +138,19 @@ class MyProfile extends React.PureComponent {
                                 </div>
                             </div>
                             <div className="form-row">
+                                <div className="form-group col-md-6">
+                                    <label htmlFor="inputGender">Geschlecht</label>
+                                    <select
+                                        name="gender"
+                                        className="form-control"
+                                        id="inputGender"
+                                        defaultValue={user.gender}
+                                    >
+                                        <option value="male">Männlich</option>
+                                        <option value="female">Weiblich</option>
+                                        <option value="divers">Divers</option>
+                                    </select>
+                                </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="birthDate">Geburtstag</label>
                                     <DateTime
@@ -273,6 +292,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputCase"
                                         maxLength={255}
                                         placeholder="Bsp.: be quiet! Dark Base 900 Pro"
+                                        defaultValue={user.hardware.case}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -284,6 +304,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputProcessor"
                                         maxLength={255}
                                         placeholder="Bsp.: Intel Core i9-7900X"
+                                        defaultValue={user.hardware.processor}
                                     />
                                 </div>
                             </div>
@@ -297,6 +318,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputMotherboard"
                                         maxLength={255}
                                         placeholder="Bsp.: MSI X299 XPower Gaming AC"
+                                        defaultValue={user.hardware.motherboard}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -308,6 +330,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputMemory"
                                         maxLength={255}
                                         placeholder="Bsp.: Corsair Vengeance RGB 32 GB DDR4"
+                                        defaultValue={user.hardware.memory}
                                     />
                                 </div>
                             </div>
@@ -316,22 +339,24 @@ class MyProfile extends React.PureComponent {
                                     <label htmlFor="inputGraphic">Grafikkarte</label>
                                     <input
                                         type="text"
-                                        name="graphic"
+                                        name="graphicsCard"
                                         className="form-control"
                                         id="inputGraphic"
                                         maxLength={255}
                                         placeholder="Bsp.: Nvidia GeForce GTX 1080 Ti"
+                                        defaultValue={user.hardware.graphicsCard}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputPower">Netzteil</label>
                                     <input
                                         type="text"
-                                        name="power"
+                                        name="powerSupply"
                                         className="form-control"
                                         id="inputPower"
                                         maxLength={255}
                                         placeholder="Bsp.: be quiet! DarkPower 750 Watt"
+                                        defaultValue={user.hardware.powerSupply}
                                     />
                                 </div>
                             </div>
@@ -345,6 +370,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputMonitor"
                                         maxLength={255}
                                         placeholder="Bsp.: Acer Predator XB271"
+                                        defaultValue={user.hardware.monitor}
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -356,6 +382,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputMouse"
                                         maxLength={255}
                                         placeholder="Bsp.: Logitech G903"
+                                        defaultValue={user.hardware.mouse}
                                     />
                                 </div>
                             </div>
@@ -369,6 +396,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputKeyboard"
                                         maxLength={255}
                                         placeholder="Bsp.: Logitech G910 Orion Spark"
+                                        defaultValue={user.hardware.keyboard}
                                     />
                                 </div>
 
@@ -381,6 +409,7 @@ class MyProfile extends React.PureComponent {
                                         id="inputMousePad"
                                         maxLength={255}
                                         placeholder="Bsp.: Logitech G440 Hard Gaming Mouse Pad"
+                                        defaultValue={user.hardware.mousePad}
                                     />
                                 </div>
                             </div>
