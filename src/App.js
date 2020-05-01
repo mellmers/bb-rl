@@ -14,6 +14,7 @@ import translations from "./i18n/locales";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Modal from "./components/Modal/Modal";
 import Home from "./views/Home/Home";
 import Imprint from "./views/Imprint/Imprint";
 import Login from "./views/Login/Login";
@@ -28,6 +29,7 @@ import Bulls from "./views/Bulls/Bulls";
 import TournamentRegistration from "./views/TournamentRegistration/TournamentRegistration";
 import Contact from "./views/Contact/Contact";
 import Calendar from "./views/Calendar/Calendar";
+import Profile from "./views/Profile/Profile";
 import MyProfile from "./views/MyProfile/MyProfile";
 import Commands from "./views/Commands/Commands";
 // import News from "./views/News/News";
@@ -36,8 +38,8 @@ import Commands from "./views/Commands/Commands";
 // import AdventCalendar from "./views/AdventCalendar/AdventCalendar";
 import GAOptOut from "./views/GAOptOut/GAOptOut";
 
-import {setLanguage} from "./actions/ApplicationActions";
-import {GOOGLE_ANALYTICS_TRACKING_ID, COOKIE_COOKIECONSENT_STATUS, COOKIE_OPT_OUT} from "./constants";
+import {modalClose, modalOpen, setLanguage} from "./actions/ApplicationActions";
+import {GOOGLE_ANALYTICS_TRACKING_ID, COOKIE_COOKIECONSENT_STATUS, COOKIE_OPT_OUT, MODAL_LOGIN} from "./constants";
 
 import requireAuthentication from "./utils/AuthComponent";
 import withTracker from "./utils/TrackingComponent";
@@ -160,7 +162,7 @@ class App extends React.PureComponent {
                         <main>
                             <Switch>
                                 <Route path={messages["route.home"]} component={withTracker(Home)} exact/>
-                                <Route path={messages["route.admin"]} component={withTracker(requireAuthentication(Admin, "admin"))} exact/>
+                                <Route path={messages["route.admin"]} component={requireAuthentication(Admin, "admin")} exact/>
                                 <Route path={messages["route.privacy"]} component={withTracker(Privacy)} exact/>
                                 <Route path={messages["route.imprint"]} component={withTracker(Imprint)} exact/>
                                 <Route path={messages["route.login"]} component={withTracker(Login)} exact/>
@@ -172,6 +174,7 @@ class App extends React.PureComponent {
                                 <Route path={messages["route.tournamentRegistration"]} component={withTracker(TournamentRegistration)} exact/>
                                 <Route path={messages["route.contact"]} component={withTracker(Contact)} exact/>
                                 <Route path={messages["route.calendar"]} component={withTracker(requireAuthentication(Calendar))} exact/>
+                                <Route path={messages["route.profile"]} component={withTracker(Profile)}/>
                                 <Route path={messages["route.myProfile"]} component={withTracker(requireAuthentication(MyProfile))} exact/>
                                 <Route path={messages["route.commands"]} component={withTracker(Commands)} exact/>
                                 {/*
@@ -185,6 +188,9 @@ class App extends React.PureComponent {
                             </Switch>
                         </main>
                         <Footer/>
+                        <button style={{position: 'fixed', top: 20, left: 20, zIndex: 9999}} onClick={() => {this.props.dispatch(modalOpen(MODAL_LOGIN, {}))}}>Show Modal</button>
+                        <button style={{position: 'fixed', top: 20, left: 150, zIndex: 9999}} onClick={() => {this.props.dispatch(modalClose())}}>Close Modal</button>
+                        <Modal />
                     </div>
                 </BrowserRouter>
             </IntlProvider>

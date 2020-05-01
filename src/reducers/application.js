@@ -1,9 +1,19 @@
 import {DEFAULT_LANG} from "../i18n/supportedLanguages";
 
-import {APPLICATION_LOGIN, APPLICATION_LOGOUT, APPLICATION_UPDATE_USER, APPLICATION_SET_LANGUAGE} from "../constants";
+import {
+    APPLICATION_LOGIN,
+    APPLICATION_LOGOUT,
+    APPLICATION_MODAL_CLOSE,
+    APPLICATION_MODAL_OPEN,
+    APPLICATION_SET_LANGUAGE,
+    APPLICATION_UPDATE_USER
+} from "../constants";
 
 const initialState = {
     language: DEFAULT_LANG,
+    modalSettings: {},
+    modalOpen: false,
+    modalType: null,
     user: null
 };
 
@@ -19,6 +29,20 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 user: null
+            };
+
+        case APPLICATION_MODAL_CLOSE:
+            return {
+                ...state,
+                modalOpen: false,
+                modalSettings: {}
+            };
+        case APPLICATION_MODAL_OPEN:
+            return {
+                ...state,
+                modalOpen: true,
+                modalSettings: action.settings,
+                modalType: action.modal,
             };
         case APPLICATION_SET_LANGUAGE:
             return {

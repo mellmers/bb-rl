@@ -45,6 +45,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.accessDenied",
+    "defaultMessage": "Zugriff verweigert",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.adventCalendar",
     "defaultMessage": "Adventskalender",
     "filepath": "src/i18n/messages.js"
@@ -140,36 +145,6 @@
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "cookie.message",
-    "defaultMessage": "Achtung, Achtung: Das Krümelmonster möchte deine Cookies haben! Wenn du es ihm erlaubst, ist es mega glücklich :-)",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "cookie.dismiss",
-    "defaultMessage": "Och Manno...",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "cookie.deny",
-    "defaultMessage": "Ne, geht gar nicht!",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "cookie.allow",
-    "defaultMessage": "Ja, nimm meine Cookies!",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "cookie.link",
-    "defaultMessage": "Lies hier mehr zum Datenschutz",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "cookie.policy",
-    "defaultMessage": "Cookies? Hier!",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
     "id": "app.counterDay",
     "defaultMessage": "Tage",
     "filepath": "src/i18n/messages.js"
@@ -225,6 +200,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.helmet.default",
+    "defaultMessage": "Battleground-Bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.home",
     "defaultMessage": "Start",
     "filepath": "src/i18n/messages.js"
@@ -246,12 +226,17 @@
   },
   {
     "id": "app.login",
-    "defaultMessage": "Einloggen",
+    "defaultMessage": "Anmeldung",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.loginWithCorrectAuth",
+    "defaultMessage": "Bitte logge dich mit der richtigen Berechtigung ein",
     "filepath": "src/i18n/messages.js"
   },
   {
     "id": "app.logout",
-    "defaultMessage": "Ausloggen",
+    "defaultMessage": "Abmeldung",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -335,113 +320,8 @@
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "route.contact",
-    "defaultMessage": "/de/kontakt",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.home",
-    "defaultMessage": "/de",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.login",
-    "defaultMessage": "/de/login",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.admin",
-    "defaultMessage": "/de/admin",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.privacy",
-    "defaultMessage": "/de/datenschutz",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.imprint",
-    "defaultMessage": "/de/impressum",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.register",
-    "defaultMessage": "/de/registrieren",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.rlOverlay",
-    "defaultMessage": "/de/rl-overlay",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.schedule",
-    "defaultMessage": "/de/streamzeiten",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.tournament",
-    "defaultMessage": "/de/turniere",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.bulls",
-    "defaultMessage": "/de/bulls",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.tournamentRegistration",
-    "defaultMessage": "/de/anmeldung/:teams?",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.calendar",
-    "defaultMessage": "/de/kalender",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.myProfile",
-    "defaultMessage": "/de/mein-profil",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.commands",
-    "defaultMessage": "/de/befehle",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.news",
-    "defaultMessage": "/de/news",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.newsDetail",
-    "defaultMessage": "/de/news/:title",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.scum",
-    "defaultMessage": "/de/scum",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.adventCalendar",
-    "defaultMessage": "/de/adventskalender",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.gaOptOut",
-    "defaultMessage": "/de/opt-out",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.lang.de",
-    "defaultMessage": "/de",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
-    "id": "route.lang.en",
-    "defaultMessage": "/en",
+    "id": "app.register",
+    "defaultMessage": "Registrierung",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -565,11 +445,6 @@
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "app.signIn",
-    "defaultMessage": "Registrieren",
-    "filepath": "src/i18n/messages.js"
-  },
-  {
     "id": "app.status",
     "defaultMessage": "Status",
     "filepath": "src/i18n/messages.js"
@@ -581,7 +456,7 @@
   },
   {
     "id": "app.streamScheduleNote",
-    "defaultMessage": "Alle anderen Tage streamen wir spontan.<br/>Die angegebenen Zeiten können variieren.<br/>Änderungen werden im Discord mitgeteilt!",
+    "defaultMessage": "Alle anderen Tage streamen wir spontan.<br/>Die angegebenen Zeiten können variieren.<br/>Änderungen werden im <a href=\"https://discord.gg/9psnFwb\" target=\"_blank\" rel=\"noopener noreferrer\">Discord</a> mitgeteilt!",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -757,6 +632,236 @@
   {
     "id": "bulls.heading",
     "defaultMessage": "Das sind wir - die Bullen im Stall",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.contact",
+    "defaultMessage": "/de/kontakt",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.home",
+    "defaultMessage": "/de",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.login",
+    "defaultMessage": "/de/login",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.admin",
+    "defaultMessage": "/de/admin",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.privacy",
+    "defaultMessage": "/de/datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.imprint",
+    "defaultMessage": "/de/impressum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.register",
+    "defaultMessage": "/de/registrieren",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.rlOverlay",
+    "defaultMessage": "/de/rl-overlay",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.schedule",
+    "defaultMessage": "/de/streamzeiten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.tournament",
+    "defaultMessage": "/de/turniere",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.bulls",
+    "defaultMessage": "/de/bulls",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.tournamentRegistration",
+    "defaultMessage": "/de/anmeldung/:teams?",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.calendar",
+    "defaultMessage": "/de/kalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.profile",
+    "defaultMessage": "/de/profil/:username",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.myProfile",
+    "defaultMessage": "/de/mein-profil",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.commands",
+    "defaultMessage": "/de/befehle",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.news",
+    "defaultMessage": "/de/news",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.newsDetail",
+    "defaultMessage": "/de/news/:title",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.scum",
+    "defaultMessage": "/de/scum",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.adventCalendar",
+    "defaultMessage": "/de/adventskalender",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.gaOptOut",
+    "defaultMessage": "/de/opt-out",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.lang.de",
+    "defaultMessage": "/de",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "route.lang.en",
+    "defaultMessage": "/en",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.message",
+    "defaultMessage": "Achtung, Achtung: Das Krümelmonster möchte deine Cookies haben! Wenn du es ihm erlaubst, ist es mega glücklich :-)",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.dismiss",
+    "defaultMessage": "Och Manno...",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.deny",
+    "defaultMessage": "Ne, geht gar nicht!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.allow",
+    "defaultMessage": "Ja, nimm meine Cookies!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.link",
+    "defaultMessage": "Lies hier mehr zum Datenschutz",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "cookie.policy",
+    "defaultMessage": "Cookies? Hier!",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.btn.login",
+    "defaultMessage": "Anmelden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.btn.logout",
+    "defaultMessage": "Abmelden",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.btn.register",
+    "defaultMessage": "Registrieren",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.btn.registerSubmit",
+    "defaultMessage": "Registrierung abschließen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.mailAddress",
+    "defaultMessage": "E-Mail-Adresse",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.mail.helpText",
+    "defaultMessage": "Wir werden deine E-Mail-Adresse niemals mit anderen teilen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.password",
+    "defaultMessage": "Passwort",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.passwordRepeat",
+    "defaultMessage": "Passwort wiederholen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.requiredHint",
+    "defaultMessage": "Die mit <span class=\"required\">*</span> gekennzeichneten Felder bitte ausfüllen.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.acceptPrivacy",
+    "defaultMessage": "Bitte akzeptiere unsere",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.acceptPrivacyLink",
+    "defaultMessage": "Datenschutzbestimmungen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "form.username",
+    "defaultMessage": "Benutzername",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "error.passwordNotEqual",
+    "defaultMessage": "Die Passwörter stimmen nicht überein.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "error.passwordRegex",
+    "defaultMessage": "Das Passwort sollte mindestens 8 Zeichen lang sein, eine nummerische Ziffer, einen Groß- und einen Kleinbuchstaben enthalten.",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "error.usernameAvailable",
+    "defaultMessage": "Benutzername ist verfügbar",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "error.usernameTaken",
+    "defaultMessage": "Benutzername ist leider schon vergeben",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "dialog.login.title",
+    "defaultMessage": "Bitte zuerst einloggen",
     "filepath": "src/i18n/messages.js"
   },
   {

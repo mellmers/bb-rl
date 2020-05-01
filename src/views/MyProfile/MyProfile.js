@@ -71,15 +71,15 @@ class MyProfile extends React.PureComponent {
                                 </div>
                                 {/*
                                 <div className="col-md-6">
-                                    <label htmlFor="gamertag">In-Game Alias</label>
+                                    <label htmlFor="nickname">Nickname</label>
                                     <input
                                         type="text"
-                                        name="gamertag"
+                                        name="nickname"
                                         className="form-control"
-                                        id="gamertag"
+                                        id="nickname"
                                         maxLength={255}
-                                        placeholder="In-Game Alias"
-                                        defaultValue={user.gamertag}
+                                        placeholder="Nickname"
+                                        defaultValue={user.nickname}
                                     />
                                 </div>
                                 */}

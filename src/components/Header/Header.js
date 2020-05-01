@@ -175,7 +175,7 @@ class Header extends React.PureComponent {
                                     </li>
                                 ) : (
                                     <li className="nav-item">
-                                        <i className="fas fa-user d-none d-lg-inline-block" /> <Link messageId="route.login" className="nav-link">{formatMessage(messages.login)}</Link>|<Link messageId="route.register" className="nav-link">{formatMessage(messages.signIn)}</Link>
+                                        <i className="fas fa-user d-none d-lg-inline-block" /> <Link messageId="route.login" className="nav-link">{formatMessage(messages.formBtnLogin)}</Link>|<Link messageId="route.register" className="nav-link">{formatMessage(messages.formBtnRegister)}</Link>
                                     </li>
                                 )}
                             </ul>
@@ -187,7 +187,7 @@ class Header extends React.PureComponent {
                         <li><Link messageId="route.myProfile"><i className="fas fa-address-card" />{formatMessage(messages.myProfile)}</Link></li>
                         {/*<li><Link to="/einstellungen"><i className="fas fa-cog" />{formatMessage(messages.settings)}</Link></li>*/}
                         <li><Link messageId="route.calendar"><i className="far fa-calendar-alt" />{formatMessage(messages.calendar)}</Link></li>
-                        <li onClick={() => { this.props.dispatch(logout()); API.getInstance().logout() }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />{formatMessage(messages.logout)}</Link></li>
+                        <li onClick={() => { this.props.dispatch(logout()); API.getInstance().logout() }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />{formatMessage(messages.formBtnLogout)}</Link></li>
                     </ul>
                     <div ref="backdrop" className="backdrop" />
                 </div>

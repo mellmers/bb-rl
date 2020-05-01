@@ -1,5 +1,8 @@
 import React from "react";
+import {FormattedHTMLMessage} from "react-intl";
+
+import messages from "./../../i18n/messages";
 
 export default function (props) {
-    return  <div className="required-hint">Die mit <span className="required">*</span> gekennzeichneten Felder bitte ausfüllen.</div>;
+    return  <div className="required-hint"><FormattedHTMLMessage {...messages.formRequiredHint}/></div>;
 }

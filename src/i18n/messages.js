@@ -1,4 +1,3 @@
-// import React from "react";
 import {defineMessages} from "react-intl";
 
 export default defineMessages({
@@ -51,6 +50,10 @@ export default defineMessages({
     aboutLink3: {
         id: 'app.aboutLink3',
         defaultMessage: 'Hier gehts zu unserem Streaming-Setup'
+    },
+    accessDenied: {
+        id: 'app.accessDenied',
+        defaultMessage: 'Zugriff verweigert'
     },
     adventCalendar: {
         id: 'app.adventCalendar',
@@ -128,30 +131,6 @@ export default defineMessages({
         id: 'contactForm.title',
         defaultMessage: 'Kontaktiere uns'
     },
-    'cookie.message': {
-        id: 'cookie.message',
-        defaultMessage: 'Achtung, Achtung: Das Krümelmonster möchte deine Cookies haben! Wenn du es ihm erlaubst, ist es mega glücklich :-)'
-    },
-    'cookie.dismiss': {
-        id: 'cookie.dismiss',
-        defaultMessage: 'Och Manno...'
-    },
-    'cookie.deny': {
-        id: 'cookie.deny',
-        defaultMessage: 'Ne, geht gar nicht!'
-    },
-    'cookie.allow': {
-        id: 'cookie.allow',
-        defaultMessage: 'Ja, nimm meine Cookies!'
-    },
-    'cookie.link': {
-        id: 'cookie.link',
-        defaultMessage: 'Lies hier mehr zum Datenschutz'
-    },
-    'cookie.policy': {
-        id: 'cookie.policy',
-        defaultMessage: 'Cookies? Hier!'
-    },
     counterDay: {
         id: 'app.counterDay',
         defaultMessage: 'Tage'
@@ -196,6 +175,10 @@ export default defineMessages({
         id: 'app.goUp',
         defaultMessage: 'nach oben'
     },
+    helmetDefault: {
+        id: 'app.helmet.default',
+        defaultMessage: 'Battleground-Bulls'
+    },
     home: {
         id: 'app.home',
         defaultMessage: 'Start'
@@ -214,11 +197,15 @@ export default defineMessages({
     },
     login: {
         id: 'app.login',
-        defaultMessage: 'Einloggen'
+        defaultMessage: 'Anmeldung'
+    },
+    loginWithCorrectAuth: {
+        id: 'app.loginWithCorrectAuth',
+        defaultMessage: 'Bitte logge dich mit der richtigen Berechtigung ein'
     },
     logout: {
         id: 'app.logout',
-        defaultMessage: 'Ausloggen'
+        defaultMessage: 'Abmeldung'
     },
     news: {
         id: 'app.news',
@@ -284,94 +271,9 @@ export default defineMessages({
         id: 'app.readMore',
         defaultMessage: 'mehr erfahren'
     },
-    'route.contact': {
-        id: 'route.contact',
-        defaultMessage: '/de/kontakt'
-    },
-    'route.home': {
-        id: 'route.home',
-        defaultMessage: '/de'
-    },
-    'route.login': {
-        id: 'route.login',
-        defaultMessage: '/de/login'
-    },
-    'route.admin': {
-        id: 'route.admin',
-        defaultMessage: '/de/admin'
-    },
-    'route.privacy': {
-        id: 'route.privacy',
-        defaultMessage: '/de/datenschutz'
-    },
-    'route.imprint': {
-        id: 'route.imprint',
-        defaultMessage: '/de/impressum'
-    },
-    'route.register': {
-        id: 'route.register',
-        defaultMessage: '/de/registrieren'
-    }
-    ,
-    'route.rlOverlay': {
-        id: 'route.rlOverlay',
-        defaultMessage: '/de/rl-overlay'
-    },
-    'route.schedule': {
-        id: 'route.schedule',
-        defaultMessage: '/de/streamzeiten'
-    },
-    'route.tournament': {
-        id: 'route.tournament',
-        defaultMessage: '/de/turniere'
-    },
-    'route.bulls': {
-        id: 'route.bulls',
-        defaultMessage: '/de/bulls'
-    },
-    'route.tournamentRegistration': {
-        id: 'route.tournamentRegistration',
-        defaultMessage: '/de/anmeldung/:teams?'
-    },
-    'route.calendar': {
-        id: 'route.calendar',
-        defaultMessage: '/de/kalender'
-    },
-    'route.myProfile': {
-        id: 'route.myProfile',
-        defaultMessage: '/de/mein-profil'
-    },
-    'route.commands': {
-        id: 'route.commands',
-        defaultMessage: '/de/befehle'
-    },
-    'route.news': {
-        id: 'route.news',
-        defaultMessage: '/de/news'
-    },
-    'route.newsDetail': {
-        id: 'route.newsDetail',
-        defaultMessage: '/de/news/:title'
-    },
-    'route.scum': {
-        id: 'route.scum',
-        defaultMessage: '/de/scum'
-    },
-    'route.adventCalendar': {
-        id: 'route.adventCalendar',
-        defaultMessage: '/de/adventskalender'
-    },
-    'route.gaOptOut': {
-        id: 'route.gaOptOut',
-        defaultMessage: '/de/opt-out'
-    },
-    'route.lang.de': {
-        id: 'route.lang.de',
-        defaultMessage: '/de'
-    },
-    'route.lang.en': {
-        id: 'route.lang.en',
-        defaultMessage: '/en'
+    register: {
+        id: 'app.register',
+        defaultMessage: 'Registrierung'
     },
     ruleCommands: {
         id: 'app.ruleCommands',
@@ -493,10 +395,6 @@ export default defineMessages({
     serverName: {
         id: 'app.serverName',
         defaultMessage: 'Servername'
-    },
-    signIn: {
-        id: 'app.signIn',
-        defaultMessage: 'Registrieren'
     },
     status: {
         id: 'app.status',
@@ -649,16 +547,241 @@ export default defineMessages({
 
 
     /**
+     * Seite Registierung
+     */
+
+
+
+
+    /**
      * Seite Bulls (Mitglieder)
      */
+
     bullsHeading: {
         id: 'bulls.heading',
         defaultMessage: 'Das sind wir - die Bullen im Stall'
     },
 
+
+    /**
+     * Routes
+     */
+
+    'route.contact': {
+        id: 'route.contact',
+        defaultMessage: '/de/kontakt'
+    },
+    'route.home': {
+        id: 'route.home',
+        defaultMessage: '/de'
+    },
+    'route.login': {
+        id: 'route.login',
+        defaultMessage: '/de/login'
+    },
+    'route.admin': {
+        id: 'route.admin',
+        defaultMessage: '/de/admin'
+    },
+    'route.privacy': {
+        id: 'route.privacy',
+        defaultMessage: '/de/datenschutz'
+    },
+    'route.imprint': {
+        id: 'route.imprint',
+        defaultMessage: '/de/impressum'
+    },
+    'route.register': {
+        id: 'route.register',
+        defaultMessage: '/de/registrieren'
+    }
+    ,
+    'route.rlOverlay': {
+        id: 'route.rlOverlay',
+        defaultMessage: '/de/rl-overlay'
+    },
+    'route.schedule': {
+        id: 'route.schedule',
+        defaultMessage: '/de/streamzeiten'
+    },
+    'route.tournament': {
+        id: 'route.tournament',
+        defaultMessage: '/de/turniere'
+    },
+    'route.bulls': {
+        id: 'route.bulls',
+        defaultMessage: '/de/bulls'
+    },
+    'route.tournamentRegistration': {
+        id: 'route.tournamentRegistration',
+        defaultMessage: '/de/anmeldung/:teams?'
+    },
+    'route.calendar': {
+        id: 'route.calendar',
+        defaultMessage: '/de/kalender'
+    },
+    'route.profile': {
+        id: 'route.profile',
+        defaultMessage: '/de/profil/:username'
+    },
+    'route.myProfile': {
+        id: 'route.myProfile',
+        defaultMessage: '/de/mein-profil'
+    },
+    'route.commands': {
+        id: 'route.commands',
+        defaultMessage: '/de/befehle'
+    },
+    'route.news': {
+        id: 'route.news',
+        defaultMessage: '/de/news'
+    },
+    'route.newsDetail': {
+        id: 'route.newsDetail',
+        defaultMessage: '/de/news/:title'
+    },
+    'route.scum': {
+        id: 'route.scum',
+        defaultMessage: '/de/scum'
+    },
+    'route.adventCalendar': {
+        id: 'route.adventCalendar',
+        defaultMessage: '/de/adventskalender'
+    },
+    'route.gaOptOut': {
+        id: 'route.gaOptOut',
+        defaultMessage: '/de/opt-out'
+    },
+    'route.lang.de': {
+        id: 'route.lang.de',
+        defaultMessage: '/de'
+    },
+    'route.lang.en': {
+        id: 'route.lang.en',
+        defaultMessage: '/en'
+    },
+
+
+    /**
+     * Cookies
+     */
+
+    'cookie.message': {
+        id: 'cookie.message',
+        defaultMessage: 'Achtung, Achtung: Das Krümelmonster möchte deine Cookies haben! Wenn du es ihm erlaubst, ist es mega glücklich :-)'
+    },
+    'cookie.dismiss': {
+        id: 'cookie.dismiss',
+        defaultMessage: 'Och Manno...'
+    },
+    'cookie.deny': {
+        id: 'cookie.deny',
+        defaultMessage: 'Ne, geht gar nicht!'
+    },
+    'cookie.allow': {
+        id: 'cookie.allow',
+        defaultMessage: 'Ja, nimm meine Cookies!'
+    },
+    'cookie.link': {
+        id: 'cookie.link',
+        defaultMessage: 'Lies hier mehr zum Datenschutz'
+    },
+    'cookie.policy': {
+        id: 'cookie.policy',
+        defaultMessage: 'Cookies? Hier!'
+    },
+
+
+    /**
+     * Forms, Input etc.
+     */
+
+    formBtnLogin: {
+        id: 'form.btn.login',
+        defaultMessage: 'Anmelden'
+    },
+    formBtnLogout: {
+        id: 'form.btn.logout',
+        defaultMessage: 'Abmelden'
+    },
+    formBtnRegister: {
+        id: 'form.btn.register',
+        defaultMessage: 'Registrieren'
+    },
+    formBtnRegisterSubmit: {
+        id: 'form.btn.registerSubmit',
+        defaultMessage: 'Registrierung abschließen'
+    },
+    formMailAddress: {
+        id: 'form.mailAddress',
+        defaultMessage: 'E-Mail-Adresse'
+    },
+    formMailHelpText: {
+        id: 'form.mail.helpText',
+        defaultMessage: 'Wir werden deine E-Mail-Adresse niemals mit anderen teilen'
+    },
+    formPassword: {
+        id: 'form.password',
+        defaultMessage: 'Passwort'
+    },
+    formPasswordRepeat: {
+        id: 'form.passwordRepeat',
+        defaultMessage: 'Passwort wiederholen'
+    },
+    formRequiredHint: {
+        id: 'form.requiredHint',
+        defaultMessage: 'Die mit <span class="required">*</span> gekennzeichneten Felder bitte ausfüllen.'
+    },
+    formAcceptPrivacy: {
+        id: 'form.acceptPrivacy',
+        defaultMessage: 'Bitte akzeptiere unsere'
+    },
+    formAcceptPrivacyLink: {
+        id: 'form.acceptPrivacyLink',
+        defaultMessage: 'Datenschutzbestimmungen'
+    },
+    formUsername: {
+        id: 'form.username',
+        defaultMessage: 'Benutzername'
+    },
+
+
+    /**
+     * Errors
+     */
+
+    errorPasswordNotEqual: {
+        id: 'error.passwordNotEqual',
+        defaultMessage: 'Die Passwörter stimmen nicht überein.'
+    },
+    errorPasswordRegex: {
+        id: 'error.passwordRegex',
+        defaultMessage: 'Das Passwort sollte mindestens 8 Zeichen lang sein, eine nummerische Ziffer, einen Groß- und einen Kleinbuchstaben enthalten.'
+    },
+    errorUsernameAvailable: {
+        id: 'error.usernameAvailable',
+        defaultMessage: 'Benutzername ist verfügbar'
+    },
+    errorUsernameTaken: {
+        id: 'error.usernameTaken',
+        defaultMessage: 'Benutzername ist leider schon vergeben'
+    },
+
+
+    /**
+     * Dialogs
+     */
+
+    dialogLoginTitle: {
+        id: 'dialog.login.title',
+        defaultMessage: 'Bitte zuerst einloggen'
+    },
+
+
     /**
      * Uhrzeit und Datum
      */
+
     monday: {
         id: 'weekday.monday',
         defaultMessage: 'Montag'

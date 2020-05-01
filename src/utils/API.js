@@ -2,8 +2,10 @@ import * as CONSTANTS from "../constants";
 import $ from "jquery";
 import includes from "lodash/includes";
 
-import {logout, updateUser} from "./../actions/ApplicationActions";
+import {logout, modalOpen} from "./../actions/ApplicationActions";
 import store from "./../store";
+import {MODAL_LOGIN} from "./../constants";
+import translations from "./../i18n/locales";
 
 export default class API {
 
@@ -64,12 +66,11 @@ export default class API {
 
         if (url.indexOf("http") === -1) {
             let defaultHeaders = {
-              "Accept": "application/json",
-              "Content-Type": contentType
+                "Accept": "application/json",
+                "Content-Type": contentType
             };
             if (this.user) {
-                console.log(this.user)
-              defaultHeaders.Authorization = "Bearer " + this.user.accessToken;
+                defaultHeaders.Authorization = "Bearer " + this.user.accessToken;
             }
             header = $.extend({}, defaultHeaders, header);
             if (process.env.REACT_APP_API === "local") {
@@ -109,31 +110,18 @@ export default class API {
             .then(this._parseJson)
             .then(json => {
                 // on unauthorized
-                if (json.messages && json.messages[0].token_type === "access" && this.user && this.user.refreshToken) {
-                    // try to get new access token
-                    this._fetch("/token/refresh/", "POST", {refresh: this.user.refreshToken}, null, null)
-                        .then(auth => {
-                            if (auth.access) {
-                                this.user.accessToken = auth.access;
-
-                                // save user in app state and api state
-                                store.dispatch(updateUser(this.user));
-
-                                header.Authorization = "Bearer " + auth.access;
-                                this._fetch(url, method, body, query, header, contentType);
-                                dfr.resolve(this.user);
-                            } else {
-                                // Logout
-                                this.user = null;
-                                store.dispatch(logout());
-                                dfr.reject({error: this._parseError()});
-                            }
-                        }).catch(error => {
-                            // Logout
-                            this.user = null;
-                            store.dispatch(logout());
-                            dfr.reject({error: this._parseError(error)});
-                        });
+                if (json.message === "jwt expired") {
+                    console.log("JWT EXPIRED", store.getState().application);
+                    const appState = store.getState().application;
+                    let title = null;
+                    if (appState && appState.language && translations[appState.language]) {
+                        title = translations[appState.language].dialogLoginTitle;
+                    }
+                    store.dispatch(modalOpen(MODAL_LOGIN, {title: title}));
+                    // Logout
+                    // this.user = null;
+                    // store.dispatch(logout());
+                    dfr.reject({error: this._parseError()});
                 }
 
                 // on error

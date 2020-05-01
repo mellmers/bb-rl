@@ -1,0 +1,76 @@
+@import "../../variables";
+
+#modal-wrapper {
+  pointer-events: none;
+
+  &.open {
+    pointer-events: all;
+  }
+
+  #modal {
+    position: fixed;
+    z-index: 2001;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 1px 10px 0 $grey;
+
+    .header {
+      position: relative;
+      overflow: hidden;
+      background-color: $highlightColor;
+
+      &.with-title {
+        color: #ffffff;
+
+        .title {
+          display: block;
+        }
+      }
+
+      .title {
+        display: none;
+        padding: 15px 35px 15px 15px;
+      }
+      .fa-times {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 19px;
+        cursor: pointer;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .content {
+      padding: 10px 15px;
+    }
+  }
+
+  #modal-backdrop {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+// Login Modal
+#modal-login {
+  .btn {
+    width: 100%;
+  }
+}
