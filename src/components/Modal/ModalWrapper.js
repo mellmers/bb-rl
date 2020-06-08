@@ -7,7 +7,7 @@ const ModalWrapper = props => {
         <div id={props.id || ""}>
             <div className={classNames("header", {"with-title": props.title})}>
                 <div className="title">{props.title}</div>
-                <i className="fa fa-times" onClick={props.modalClose} />
+                <i className="fa fa-times" onClick={ () => { props.modalClose(); if (props.application.modal.settings.onClose) props.application.modal.settings.onClose() } } />
             </div>
             <div className="content">
                 {props.children}

@@ -26,15 +26,14 @@ class LoginForm extends React.PureComponent {
     onSubmit(e) {
         e.preventDefault();
         let form = $(this.refs.form);
-        console.log(form.serializeObject())
 
         API.getInstance().login(form.serializeObject())
             .then( user => {
                 let search = searchToObject(this.props.location.search);
                 this.props.dispatch(login(user));
-                this.props.history.push(search.next || "/" + this.props.language);
                 form[0].reset();
-                if (this.props.onLogin) this.props.onLogin();
+                if (search.next || this.props.showStartPageAfterLogin) this.props.history.push(search.next || "/" + this.props.language);
+                if (this.props.onLogin) this.props.onLogin(user);
             })
             .catch( error => {
                 this.setState({error: error });
@@ -69,6 +68,7 @@ class LoginForm extends React.PureComponent {
 }
 LoginForm.propTypes = {
     // props
+    showStartPageAfterLogin: PropTypes.bool,
     style: PropTypes.string.isRequired,
 
     // methods
@@ -76,6 +76,7 @@ LoginForm.propTypes = {
 };
 
 LoginForm.defaultProps = {
+    showStartPageAfterLogin: false,
     style: "dark"
 };
 

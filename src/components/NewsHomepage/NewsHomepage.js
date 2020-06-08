@@ -33,7 +33,7 @@ class NewsHomepage extends React.PureComponent {
                         <Slide bottom>
                             <div className="card">
                                 <h2 className="heading">Neuer Sponsor</h2>
-                                <img src={logoTeamspeak} width={200} />
+                                <img src={logoTeamspeak} width={200} alt="TeamSpeak" />
                                 <ul>
                                     <li>Unübertroffene Sprachqualität</li>
                                     <li>Integrierter Datenschutz</li>

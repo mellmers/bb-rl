@@ -29,8 +29,6 @@ class MyProfile extends React.PureComponent {
         if (form.parent().attr("id") === "hardware") {
             formData = { hardware: formData };
         }
-        console.log("submit", formData);
-        console.log("username valid?", this.state.usernameValid);
         if (this.state.usernameValid) {
             API.getInstance()._fetch("/users/" + this.props.user._id + "/", "PATCH", formData, null, {
                 "Authorization": "Bearer " + this.props.user.accessToken
@@ -45,7 +43,6 @@ class MyProfile extends React.PureComponent {
 
     render() {
         let {user} = this.props;
-        console.log(user);
         return (
             <div id="my-profile" className="view full-container my-profile">
                 <Helmet><title>Mein Profil - BattleBulls</title></Helmet>
@@ -69,20 +66,19 @@ class MyProfile extends React.PureComponent {
                                         placeholder="Bsp.: xPainHunt3r"
                                     />
                                 </div>
-                                {/*
                                 <div className="col-md-6">
-                                    <label htmlFor="nickname">Nickname</label>
+                                    <label htmlFor="nickname">E-Mail-Adresse <span className="required">*</span></label>
                                     <input
-                                        type="text"
-                                        name="nickname"
+                                        type="email"
+                                        name="email"
                                         className="form-control"
-                                        id="nickname"
+                                        id="email"
                                         maxLength={255}
-                                        placeholder="Nickname"
-                                        defaultValue={user.nickname}
+                                        placeholder="Bsp.: xPainHunt3r@battleground-bulls.de"
+                                        defaultValue={user.email}
+                                        required
                                     />
                                 </div>
-                                */}
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">

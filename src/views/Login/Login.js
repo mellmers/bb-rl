@@ -41,7 +41,8 @@ class Login extends React.PureComponent {
 
                             <h1>{formatMessage(messages.login)}</h1>
 
-                            <LoginForm style="light" />
+                            {/* eslint-disable-next-line */}
+                            <LoginForm style="light" showStartPageAfterLogin={true} />
                         </div>
                     </div>
                 </div>

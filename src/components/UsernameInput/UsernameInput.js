@@ -23,7 +23,7 @@ class UsernameInput extends React.PureComponent {
         clearTimeout(this.usernameChangeTimeout);
         this.usernameChangeTimeout = setTimeout(() => {
             let username = input.val();
-            API.getInstance()._fetch("/users/?username=" + username)
+            API.getInstance()._fetch("/users/?verification=true&username=" + username)
                 .always(response => {
                     const usernameAvailable = response.code === 200;
                     let usernameValid = true;
@@ -46,6 +46,8 @@ class UsernameInput extends React.PureComponent {
                 break;
             case 409:
                 alert = <div className="alert alert-danger" role="alert">{formatMessage(messages.errorUsernameTaken)}</div>;
+                break;
+            default:
                 break;
         }
 

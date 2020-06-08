@@ -90,6 +90,8 @@ class Registration extends React.PureComponent {
                     case ERROR_PASSWORD_REGEX:
                         passwordErrorText = formatMessage(messages.errorPasswordRegex);
                         break;
+                    default:
+                        break;
                 }
                 passwordErrorDiv.push(<div className="alert alert-danger">{passwordErrorText}</div>);
             });
@@ -111,8 +113,8 @@ class Registration extends React.PureComponent {
                             <form ref="form" onSubmit={this.onSubmit}>
                                 <RequiredHint />
                                 <div className="form-group">
-                                    <label htmlFor="mail">{formatMessage(messages.formMailAddress)}</label>
-                                    <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder={formatMessage(messages.formMailAddress)}/>
+                                    <label htmlFor="mail">{formatMessage(messages.formMailAddress)}<span className="required">*</span></label>
+                                    <input type="email" className="form-control" id="mail" name="mail" aria-describedby="mailHelp" placeholder={formatMessage(messages.formMailAddress)} required/>
                                     <small id="mailHelp" className="form-text mail-info">{formatMessage(messages.formMailHelpText)}.</small>
                                 </div>
                                 <UsernameInput onChange={valid => {this.setState({usernameValid: valid});}}/>

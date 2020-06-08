@@ -308,6 +308,7 @@ header {
       border-top: 1px solid $borderColorBlue;
       transition: width 1s;
       li {
+        white-space: nowrap;
         &:hover {
           i, a {
             color: #fff;

@@ -25,7 +25,7 @@ class Partner extends React.PureComponent {
                             <Flip left delay={300}>
                                 <div className="col-12 col-sm-6 col-md-4">
                                     <a href="https://www.mmoga.de/?ref=29428" target="_blank" rel="noopener noreferrer" className="partner-card">
-                                        <img src={MMOGA_IMG} />
+                                        <img src={MMOGA_IMG} alt="MMOGA" />
                                         <div className="divider"/>
                                         <ul>
                                             <li>Gamekeys</li>
@@ -41,7 +41,7 @@ class Partner extends React.PureComponent {
                             <Flip left delay={800}>
                                 <div className="col-12 col-sm-6 col-md-4">
                                     <a href="https://teamspeak.com/?utm_source=sponsor&utm_campaign=battleground-bulls" target="_blank" rel="noopener noreferrer" className="partner-card">
-                                        <img src={Teamspeak_IMG} />
+                                        <img src={Teamspeak_IMG} alt="TeamSpeak" />
                                         <div className="divider"/>
                                         <ul>
                                             <li>Beste Sprachqualität</li>
@@ -57,7 +57,7 @@ class Partner extends React.PureComponent {
                             <Flip left delay={1300}>
                                 <div className="col-12 col-sm-6 col-md-4">
                                     <a href="https://shop.spreadshirt.de/Battleground-Bulls/" target="_blank" rel="noopener noreferrer" className="partner-card">
-                                        <img src={Spreadshirt_IMG} />
+                                        <img src={Spreadshirt_IMG} alt="Spreadshirt" />
                                         <div className="divider"/>
                                         <ul>
                                             <li>T-Shirt's</li>

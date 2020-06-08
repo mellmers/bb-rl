@@ -184,7 +184,12 @@ class Header extends React.PureComponent {
                 </nav>
                 <div className={classnames("sidebar-wrapper", {"open": userSidebarOpen})}>
                     <ul ref="sidebar">
-                        <li><Link messageId="route.myProfile"><i className="fas fa-address-card" />{formatMessage(messages.myProfile)}</Link></li>
+                        {user ? (
+                            <React.Fragment>
+                                <li><Link messageId="route.profile" params={{username: user.username}}><i className="fas fa-address-card" />{formatMessage(messages.viewProfile)}</Link></li>
+                                <li><Link messageId="route.myProfile"><i className="fas fa-user-edit" />{formatMessage(messages.editProfile)}</Link></li>
+                            </React.Fragment>
+                        ) : null }
                         {/*<li><Link to="/einstellungen"><i className="fas fa-cog" />{formatMessage(messages.settings)}</Link></li>*/}
                         <li><Link messageId="route.calendar"><i className="far fa-calendar-alt" />{formatMessage(messages.calendar)}</Link></li>
                         <li onClick={() => { this.props.dispatch(logout()); API.getInstance().logout() }}><Link to={this.props.location}><i className="fas fa-sign-out-alt" />{formatMessage(messages.formBtnLogout)}</Link></li>

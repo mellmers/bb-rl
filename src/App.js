@@ -38,8 +38,8 @@ import Commands from "./views/Commands/Commands";
 // import AdventCalendar from "./views/AdventCalendar/AdventCalendar";
 import GAOptOut from "./views/GAOptOut/GAOptOut";
 
-import {modalClose, modalOpen, setLanguage} from "./actions/ApplicationActions";
-import {GOOGLE_ANALYTICS_TRACKING_ID, COOKIE_COOKIECONSENT_STATUS, COOKIE_OPT_OUT, MODAL_LOGIN} from "./constants";
+import {setLanguage} from "./actions/ApplicationActions";
+import {GOOGLE_ANALYTICS_TRACKING_ID, COOKIE_COOKIECONSENT_STATUS, COOKIE_OPT_OUT} from "./constants";
 
 import requireAuthentication from "./utils/AuthComponent";
 import withTracker from "./utils/TrackingComponent";
@@ -188,8 +188,6 @@ class App extends React.PureComponent {
                             </Switch>
                         </main>
                         <Footer/>
-                        <button style={{position: 'fixed', top: 20, left: 20, zIndex: 9999}} onClick={() => {this.props.dispatch(modalOpen(MODAL_LOGIN, {}))}}>Show Modal</button>
-                        <button style={{position: 'fixed', top: 20, left: 150, zIndex: 9999}} onClick={() => {this.props.dispatch(modalClose())}}>Close Modal</button>
                         <Modal />
                     </div>
                 </BrowserRouter>

@@ -180,6 +180,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.editProfile",
+    "defaultMessage": "Profil bearbeiten",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "app.footerContact",
     "defaultMessage": "Kontakt",
     "filepath": "src/i18n/messages.js"
@@ -257,6 +262,11 @@
   {
     "id": "app.online",
     "defaultMessage": "Online",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "app.or",
+    "defaultMessage": "oder",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -630,6 +640,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "app.viewProfile",
+    "defaultMessage": "Profil anzeigen",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "bulls.heading",
     "defaultMessage": "Das sind wir - die Bullen im Stall",
     "filepath": "src/i18n/messages.js"
@@ -850,6 +865,11 @@
     "filepath": "src/i18n/messages.js"
   },
   {
+    "id": "error.unauthorized",
+    "defaultMessage": "Benutzername oder Passwort falsch eingegeben",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
     "id": "error.usernameAvailable",
     "defaultMessage": "Benutzername ist verfügbar",
     "filepath": "src/i18n/messages.js"
@@ -860,8 +880,8 @@
     "filepath": "src/i18n/messages.js"
   },
   {
-    "id": "dialog.login.title",
-    "defaultMessage": "Bitte zuerst einloggen",
+    "id": "dialog.loginAgain.title",
+    "defaultMessage": "Sitzung abgelaufen",
     "filepath": "src/i18n/messages.js"
   },
   {

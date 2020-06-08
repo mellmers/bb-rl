@@ -2,9 +2,9 @@ import * as CONSTANTS from "../constants";
 import $ from "jquery";
 import includes from "lodash/includes";
 
-import {logout, modalOpen} from "./../actions/ApplicationActions";
+import {modalOpen} from "./../actions/ApplicationActions";
 import store from "./../store";
-import {MODAL_LOGIN} from "./../constants";
+import {MODAL_LOGIN_LOGOUT} from "./../constants";
 import translations from "./../i18n/locales";
 
 export default class API {
@@ -52,7 +52,14 @@ export default class API {
                 }
                 */
             }).catch(error => {
-                reject({error: this._parseError(error)});
+                if (error.message === "Invalid login") {
+                    const appState = store.getState().application;
+                    reject({
+                        message: translations[appState.language]["error.unauthorized"],
+                        apiMessage: error.message
+                    });
+                }
+                reject(error);
             });
         });
     }
@@ -110,24 +117,45 @@ export default class API {
             .then(this._parseJson)
             .then(json => {
                 // on unauthorized
-                if (json.message === "jwt expired") {
-                    console.log("JWT EXPIRED", store.getState().application);
+                if (json.message === "jwt expired" || json.message === "jwt malformed") {
                     const appState = store.getState().application;
                     let title = null;
                     if (appState && appState.language && translations[appState.language]) {
-                        title = translations[appState.language].dialogLoginTitle;
+                        title = translations[appState.language]["dialog.loginAgain.title"];
                     }
-                    store.dispatch(modalOpen(MODAL_LOGIN, {title: title}));
+                    store.dispatch(modalOpen(
+                        MODAL_LOGIN_LOGOUT, {
+                            title: title,
+                            onClose: () => {
+                                // Fetch again without Auth after logout / close popup
+                                delete header.Authorization;
+                                this._fetch(url, method, body, query, header, contentType)
+                                    .then( json => dfr.resolve(json) )
+                                    .catch( error => dfr.reject({error: this._parseError(error)}) );
+                            },
+                            onLogin: (user) => {
+                                // Fetch again after successfully logged in
+                                header.Authorization = "Bearer " + user.accessToken;
+                                this._fetch(url, method, body, query, header, contentType)
+                                    .then( json => dfr.resolve(json) )
+                                    .catch( error => dfr.reject({error: this._parseError(error)}) );
+                            }
+                        }));
                     // Logout
                     // this.user = null;
                     // store.dispatch(logout());
-                    dfr.reject({error: this._parseError()});
+                    // dfr.reject({error: this._parseError()});
+                    return;
                 }
 
                 // on error
                 if (json.error) {
                     console.error("Status: " + json.status + ", Error: " + json.error + ", Message: " + json.message);
                     dfr.reject(this._parseError(json));
+                }
+
+                if (json.name === "NotAuthenticated") {
+                    dfr.reject(json);
                 }
 
                 dfr.resolve(json);

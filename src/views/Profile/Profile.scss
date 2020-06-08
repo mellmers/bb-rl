@@ -1,0 +1,62 @@
+@import "./../../variables";
+
+.view.full-container#profile {
+  background: url("./background.png") no-repeat center;
+  background-size: cover;
+  color: #fff;
+  padding-top: 0;
+
+  .container {
+    background-color: $backgroundBlue;
+    min-height: 100vh;
+
+    .header {
+      position: relative;
+      margin-bottom: 25px;
+
+      .username {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        color: $highlightColor;
+        text-shadow: 2px 2px 5px $grey;
+        font-size: 3em;
+      }
+    }
+
+    h1 {
+      border-bottom: 4px solid $highlightColor;
+    }
+
+    .nav.nav-tabs {
+      min-height: 60vh;
+      border: none;
+      border-right: 3px solid $highlightColor;
+
+      .nav-item {
+        &:not(:last-child) a {
+          border-bottom: 1px solid $highlightColor;
+        }
+
+        &:hover a {
+          color: $highlightColor;
+        }
+
+        a {
+          border: none;
+
+          &:not(.collapsed) {
+            color: $highlightColor;
+          }
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      padding: 20px 0 0 50px;
+    }
+  }
+}

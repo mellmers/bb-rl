@@ -34,3 +34,4 @@ export const APPLICATION_MODAL_OPEN = "APPLICATION_MODAL_OPEN";
 
 // Modal types
 export const MODAL_LOGIN = "MODAL_LOGIN";
+export const MODAL_LOGIN_LOGOUT = "MODAL_LOGIN_LOGOUT";

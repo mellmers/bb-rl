@@ -11,9 +11,11 @@ import {
 
 const initialState = {
     language: DEFAULT_LANG,
-    modalSettings: {},
-    modalOpen: false,
-    modalType: null,
+    modal: {
+        settings: {},
+        open: false,
+        type: null
+    },
     user: null
 };
 
@@ -34,15 +36,19 @@ export default (state = initialState, action) => {
         case APPLICATION_MODAL_CLOSE:
             return {
                 ...state,
-                modalOpen: false,
-                modalSettings: {}
+                modal: {
+                    open: false,
+                    settings: {}
+                }
             };
         case APPLICATION_MODAL_OPEN:
             return {
                 ...state,
-                modalOpen: true,
-                modalSettings: action.settings,
-                modalType: action.modal,
+                modal: {
+                    open: true,
+                    settings: action.settings,
+                    type: action.modal
+                }
             };
         case APPLICATION_SET_LANGUAGE:
             return {

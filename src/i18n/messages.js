@@ -159,6 +159,10 @@ export default defineMessages({
         id: 'app.counterTournament',
         defaultMessage: 'Turnier in'
     },
+    editProfile: {
+        id: 'app.editProfile',
+        defaultMessage: 'Profil bearbeiten'
+    },
     footerContact: {
         id: 'app.footerContact',
         defaultMessage: 'Kontakt'
@@ -222,6 +226,10 @@ export default defineMessages({
     online: {
         id: 'app.online',
         defaultMessage: 'Online'
+    },
+    or: {
+        id: 'app.or',
+        defaultMessage: 'oder'
     },
     password: {
         id: 'app.password',
@@ -544,6 +552,10 @@ export default defineMessages({
         id: 'app.tournamentRegistrationSignInFeedback',
         defaultMessage: 'Anmeldebestätigung per E-Mail'
     },
+    viewProfile: {
+        id: 'app.viewProfile',
+        defaultMessage: 'Profil anzeigen'
+    },
 
 
     /**
@@ -758,6 +770,10 @@ export default defineMessages({
         id: 'error.passwordRegex',
         defaultMessage: 'Das Passwort sollte mindestens 8 Zeichen lang sein, eine nummerische Ziffer, einen Groß- und einen Kleinbuchstaben enthalten.'
     },
+    errorUnauthorized: {
+        id: 'error.unauthorized',
+        defaultMessage: 'Benutzername oder Passwort falsch eingegeben'
+    },
     errorUsernameAvailable: {
         id: 'error.usernameAvailable',
         defaultMessage: 'Benutzername ist verfügbar'
@@ -772,9 +788,9 @@ export default defineMessages({
      * Dialogs
      */
 
-    dialogLoginTitle: {
-        id: 'dialog.login.title',
-        defaultMessage: 'Bitte zuerst einloggen'
+    dialogLoginAgainTitle: {
+        id: 'dialog.loginAgain.title',
+        defaultMessage: 'Sitzung abgelaufen'
     },
 
 

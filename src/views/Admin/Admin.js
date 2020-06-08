@@ -19,6 +19,7 @@ class Admin extends React.PureComponent {
                         height: "calc(100vh - 62px)",
                         border: "none"
                     }}
+                    title="Admin"
                 />
             </div>
         );
