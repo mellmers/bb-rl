@@ -23,15 +23,19 @@ class UsernameInput extends React.PureComponent {
         clearTimeout(this.usernameChangeTimeout);
         this.usernameChangeTimeout = setTimeout(() => {
             let username = input.val();
-            API.getInstance()._fetch("/users/?verification=true&username=" + username)
-                .always(response => {
-                    const usernameAvailable = response.code === 200;
-                    let usernameValid = true;
-                    this.setState({usernameStatus: response.code});
-                    if (this.props.onChange) {
-                        this.props.onChange(usernameAvailable && usernameValid);
-                    }
-                });
+            if (!this.props.user || username !== this.props.user.username) {
+                API.getInstance()._fetch("/users/?verification=true&username=" + username)
+                    .always(response => {
+                        const usernameAvailable = response.code === 200;
+                        let usernameValid = true;
+                        this.setState({usernameStatus: response.code});
+                        if (this.props.onChange) {
+                            this.props.onChange(usernameAvailable && usernameValid);
+                        }
+                    });
+            } else {
+                this.setState({usernameStatus: null});
+            }
         }, 500);
     }
 

@@ -35,3 +35,8 @@ export const APPLICATION_MODAL_OPEN = "APPLICATION_MODAL_OPEN";
 // Modal types
 export const MODAL_LOGIN = "MODAL_LOGIN";
 export const MODAL_LOGIN_LOGOUT = "MODAL_LOGIN_LOGOUT";
+
+// Privacy
+export const PRIVACY_PRIVATE = "private";
+export const PRIVACY_LOCAL = "local";
+export const PRIVACY_PUBLIC = "public";

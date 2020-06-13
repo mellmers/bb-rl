@@ -68,6 +68,9 @@ h3 {
 .highlighted-text {
   color: $highlightColor;
 }
+.disabled-text {
+  color: $disabledColor;
+}
 
 // Cookie consent
 .cc-window.cc-floating {
@@ -169,6 +172,7 @@ h3 {
 
 .form-control {
   border-radius: 0;
+  background-clip: border-box;
   &:focus {
     border-color: $highlightColor;
     box-shadow: 0 0 0 0.2rem rgba($highlightColor, .25);

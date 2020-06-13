@@ -8,6 +8,12 @@
     padding-bottom: 100px;
     form {
       padding: 25px 0;
+      .form-row .col-md-6:first-child {
+        padding-right: 25px;
+      }
+      .form-row .col-md-6:nth-child(2) {
+        padding-left: 25px;
+      }
       .form-group.username .alert {
         margin-top: 15px;
       }

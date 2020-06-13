@@ -20,12 +20,15 @@
         left: 50px;
         color: $highlightColor;
         text-shadow: 2px 2px 5px $grey;
+        font-family: "Riffic", serif;
         font-size: 3em;
       }
     }
 
     h1 {
       border-bottom: 4px solid $highlightColor;
+      font-family: "Riffic", serif;
+      letter-spacing: 1px;
     }
 
     .nav.nav-tabs {
@@ -43,6 +46,8 @@
         }
 
         a {
+          font-family: "Riffic", serif;
+          letter-spacing: 1px;
           border: none;
 
           &:not(.collapsed) {
@@ -56,7 +61,16 @@
     }
 
     .tab-content {
-      padding: 20px 0 0 50px;
+      padding: 20px 12% 0 8%;
+
+      .divider {
+        border-bottom: 1px solid $highlightColor;
+        margin: 5px 0 10px;
+      }
+
+      .bio {
+        margin-top: 25px;
+      }
     }
   }
 }

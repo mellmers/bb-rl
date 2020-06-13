@@ -1,3 +1,6 @@
+import store from "../store";
+import translations from "../i18n/locales";
+
 export function searchToObject(search = "") {
     let result = {};
     if (search !== "") {
@@ -24,4 +27,13 @@ export function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     }
+}
+
+export function translateGender(gender) {
+    const appState = store.getState().application;
+    if (appState && appState.language && translations[appState.language]) {
+        return translations[appState.language]["gender." + gender];
+    }
+
+    return gender;
 }

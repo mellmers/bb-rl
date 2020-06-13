@@ -4,6 +4,7 @@ import DateTime from "react-datetime";
 import Helmet from "react-helmet";
 import $ from "jquery";
 
+import PrivacySelect from "../../components/Form/PrivacySelect";
 import UsernameInput from "../../components/UsernameInput/UsernameInput";
 
 import {updateUser} from "./../../actions/ApplicationActions";
@@ -17,13 +18,16 @@ class MyProfile extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            usernameValid: true
+            usernameValid: true,
+            submitting: false
         };
         this.onSubmit = this.onSubmit.bind(this);
     }
 
     onSubmit(e) {
         e.preventDefault();
+        this.setState({ submitting: true });
+
         let form = $(e.target);
         let formData = form.serializeObject();
         if (form.parent().attr("id") === "hardware") {
@@ -37,12 +41,14 @@ class MyProfile extends React.PureComponent {
                     if (response && !response.error) {
                         this.props.dispatch(updateUser(response));
                     }
+                    this.setState({ submitting: false });
                 });
         }
     }
 
     render() {
-        let {user} = this.props;
+        const {user} = this.props,
+              {submitting} = this.state;
         return (
             <div id="my-profile" className="view full-container my-profile">
                 <Helmet><title>Mein Profil - BattleBulls</title></Helmet>
@@ -82,7 +88,7 @@ class MyProfile extends React.PureComponent {
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputFirstName">Vorname</label>
+                                    <div className="d-flex justify-content-between"><label htmlFor="inputFirstName">Vorname</label> <PrivacySelect name="privacy[firstName]" selected={user.privacy.firstName} /></div>
                                     <input
                                         type="text"
                                         name="firstName"
@@ -94,7 +100,7 @@ class MyProfile extends React.PureComponent {
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputLastName">Nachname</label>
+                                    <div className="d-flex justify-content-between"><label htmlFor="inputLastName">Nachname</label> <PrivacySelect name="privacy[lastName]" selected={user.privacy.lastName} /></div>
                                     <input
                                         type="text"
                                         name="lastName"
@@ -108,7 +114,7 @@ class MyProfile extends React.PureComponent {
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputHome">Wohnort</label>
+                                    <div className="d-flex justify-content-between"><label htmlFor="inputHome">Wohnort</label> <PrivacySelect name="privacy[city]" selected={user.privacy.city} /></div>
                                     <input
                                         type="text"
                                         name="city"
@@ -120,7 +126,7 @@ class MyProfile extends React.PureComponent {
                                     />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputLand">Land</label>
+                                    <div className="d-flex justify-content-between"><label htmlFor="inputLand">Land</label> <PrivacySelect name="privacy[country]" selected={user.privacy.country} /></div>
                                     <select
                                         name="country"
                                         className="form-control"
@@ -135,7 +141,7 @@ class MyProfile extends React.PureComponent {
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputGender">Geschlecht</label>
+                                    <div className="d-flex justify-content-between"><label htmlFor="inputGender">Geschlecht</label> <PrivacySelect name="privacy[gender]" selected={user.privacy.gender} /></div>
                                     <select
                                         name="gender"
                                         className="form-control"
@@ -148,7 +154,7 @@ class MyProfile extends React.PureComponent {
                                     </select>
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="birthDate">Geburtstag</label>
+                                    <div className="d-flex justify-content-between"><label htmlFor="birthDate">Geburtstag</label> <PrivacySelect name="privacy[birthDate]" selected={user.privacy.birthDate} /></div>
                                     <DateTime
                                         closeOnSelect={true}
                                         dateFormat="YYYY-MM-DD"
@@ -168,7 +174,7 @@ class MyProfile extends React.PureComponent {
                             </div>
                             <div className="form-row">
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="bio">Dein Weg zu den Bullen:</label>
+                                    <div className="d-flex justify-content-between"><label htmlFor="bio">Dein Weg zu den Bullen:</label> <PrivacySelect name="privacy[bio]" selected={user.privacy.bio} /></div>
                                     <textarea
                                         name="bio"
                                         id="bio"
@@ -181,8 +187,8 @@ class MyProfile extends React.PureComponent {
                             </div>
                             <div className="form-row actions">
                                 <div className="form-group col-md-6">
-                                    <button type="submit" className="btn white">Speichern</button>
-                                    <button type="reset" className="btn white" onClick={()=>{this.setState({birthDate: ""})}}>Zurücksetzen</button>
+                                    <button type="submit" className="btn white" disabled={submitting}>Speichern  {submitting ? <i className="fas fa-cog fa-spin" /> : null}</button>
+                                    <button type="reset" className="btn white" disabled={submitting} onClick={()=>{this.setState({birthDate: ""})}}>Zurücksetzen</button>
                                 </div>
                             </div>
                         </form>

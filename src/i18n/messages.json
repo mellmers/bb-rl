@@ -953,5 +953,20 @@
     "id": "time.clock",
     "defaultMessage": "Uhr",
     "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "gender.divers",
+    "defaultMessage": "Divers",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "gender.female",
+    "defaultMessage": "Weiblich",
+    "filepath": "src/i18n/messages.js"
+  },
+  {
+    "id": "gender.male",
+    "defaultMessage": "Männlich",
+    "filepath": "src/i18n/messages.js"
   }
 ]

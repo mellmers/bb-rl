@@ -853,5 +853,21 @@ export default defineMessages({
     clock: {
         id: 'time.clock',
         defaultMessage: 'Uhr'
+    },
+
+    /**
+     * Geschlecht / Gender
+     */
+    divers: {
+        id: 'gender.divers',
+        defaultMessage: 'Divers'
+    },
+    female: {
+        id: 'gender.female',
+        defaultMessage: 'Weiblich'
+    },
+    male: {
+        id: 'gender.male',
+        defaultMessage: 'Männlich'
     }
 });
