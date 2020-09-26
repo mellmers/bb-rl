@@ -11,7 +11,7 @@ import Counter from "../../components/Counter/Counter";
 import Link from "../../components/Link/Link";
 import NewsHomepage from "../../components/NewsHomepage/NewsHomepage";
 import Partner from "../../components/Partner/Partner";
-// import Rules from "../../components/Rules/Rules";
+import Rules from "../../components/Rules/Rules";
 
 import API from "../../utils/API";
 
@@ -22,10 +22,14 @@ import "./Home.css";
 import logoSchriftzug from "./../../images/logo-schriftzug_600px.png";
 
 import slideImage1 from "./img/slider/rocket-league-hd-wallpapers.jpg";
-import slideImage2 from "./img/slider/wallpaper_tom_clancys_the_division_2_1920x1080.jpg";
-import slideImage3 from "./img/slider/battlefield-v.jpg";
-import slideImage4 from "./img/slider/dark-siders-wallpapers-1920x1080.jpg";
-import slideImage5 from "./img/slider/the-division-2-hd-wallpaper.jpg";
+import slideImage2 from "./img/slider/wallpaper_star_citizen_72_1920x1080.jpg";
+import slideImage3 from "./img/slider/wallpaper_vampire_the_masquerade_-_bloodlines_2_01_1920x1080.png";
+import slideImage4 from "./img/slider/wallpaper_kingpin_reloaded_01_1920x1080.jpg";
+import slideImage5 from "./img/slider/wallpaper_unreal_engine_5_01_1920x1080.png";
+import slideImage6 from "./img/slider/wallpaper_tom_clancys_the_division_2_1920x1080.jpg";
+import slideImage7 from "./img/slider/battlefield-v.jpg";
+import slideImage8 from "./img/slider/dark-siders-wallpapers-1920x1080.jpg";
+import slideImage9 from "./img/slider/the-division-2-hd-wallpaper.jpg";
 
 import Partner_MMOGA from './img/partner/MMOGA.png';
 import Partner_MMOGA_Hightlight from './img/partner/MMOGA-Highlight.png';
@@ -56,7 +60,7 @@ export class Home extends PureComponent {
         window.scrollTo(0, 0);
 
         $(this.refs.fullpage).fullpage({
-            anchors: ["start", "news", "bulls", "partner", "regeln"],
+            anchors: ["start", "news", "bulls", "regeln", "partner"],
             scrollOverflow: true
         });
 
@@ -195,7 +199,7 @@ export class Home extends PureComponent {
             autoplay: true,
             autoplaySpeed: 8000
         };
-        const sliderImages = [slideImage1, slideImage2, slideImage3, slideImage4, slideImage5];
+        const sliderImages = [slideImage1, slideImage2, slideImage3, slideImage4, slideImage5, slideImage6, slideImage7, slideImage8, slideImage9];
 
         return (
             <div ref="fullpage" className="container-fluid home">
@@ -268,7 +272,7 @@ export class Home extends PureComponent {
 
                     <About/>
 
-                    {/*<Rules/>*/}
+                    <Rules/>
 
                     <Partner/>
 
