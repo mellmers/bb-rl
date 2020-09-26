@@ -25,13 +25,15 @@ class TournamentRegistration extends React.PureComponent {
     execRecaptcha(e) {
         e.preventDefault(e);
 
-        this.setState({
-            result: null,
-            recaptcha: true,
-            sending: false
-        });
+        this.onSubmit({success: true});
 
-        ReCAPTCHA.execute(e);
+        // this.setState({
+        //     result: null,
+        //     recaptcha: true,
+        //     sending: false
+        // });
+        //
+        // ReCAPTCHA.execute(e);
     }
 
     onSubmit(recaptchaResponse) {
@@ -248,7 +250,7 @@ class TournamentRegistration extends React.PureComponent {
                             </div>
                         </div>
 
-                        <ReCAPTCHA callback={this.onSubmit} />
+                        {/*<ReCAPTCHA callback={this.onSubmit} />*/}
 
                         {this.renderResult()}
                     </form>
