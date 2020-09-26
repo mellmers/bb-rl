@@ -197,7 +197,9 @@ export class Home extends PureComponent {
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 8000
+            autoplaySpeed: 4000,
+            pauseOnDotsHover: true,
+            pauseOnHover: false
         };
         const sliderImages = [slideImage1, slideImage2, slideImage3, slideImage4, slideImage5, slideImage6, slideImage7, slideImage8, slideImage9];
 
