@@ -15,7 +15,7 @@ export default defineMessages({
     },
     aboutContent1: {
         id: 'app.aboutContent1',
-        defaultMessage: 'Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n' +
+        defaultMessage: 'Die BattleBulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n' +
             '                                    die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r\n' +
             '                                    zusammengefunden haben. Die Idee bestand darin, einen eigenen Stream Kanal zu\n' +
             '                                    gründen, um auf neue Interessante und vor allem gleichgesinnte Leute aus\n' +
@@ -246,7 +246,7 @@ export default defineMessages({
     },
     partnerHead: {
         id: 'app.partnerHead',
-        defaultMessage: 'Unterstütze die Battleground Bulls und kaufe über diese Links'
+        defaultMessage: 'Unterstütze die BattleBulls und kaufe über diese Links'
     },
     partnerMerchContent: {
         id: 'app.partnerMerchContent',
@@ -429,7 +429,7 @@ export default defineMessages({
     },
     ruleProcedure: {
         id: 'app.ruleProcedure',
-        defaultMessage: 'Alle Spiele vom Turnier werden <strong>Live</strong> von den Battleground Bulls ' +
+        defaultMessage: 'Alle Spiele vom Turnier werden <strong>Live</strong> von den BattleBulls ' +
         'gestreamt und kommentiert. Vor dem Start des Turniers wird der Turnierplan gezeigt, damit alle ' +
         '2-4 Stunden</strong> veranschlagt. Alle <strong>Ergebnisse</strong> werden nach dem Spiel ' +
         '<strong>Live</strong> im Turnierplan eingetragen.'
@@ -564,7 +564,7 @@ export default defineMessages({
     },
     tournamentRegistrationHead: {
         id: 'app.tournamentRegistrationHead',
-        defaultMessage: 'Turnier-Anmeldung - Battleground-Bulls'
+        defaultMessage: 'Turnier-Anmeldung - BattleBulls'
     },
     tournamentRegistrationHead2: {
         id: 'app.tournamentRegistrationHead2',
@@ -580,7 +580,7 @@ export default defineMessages({
     },
     tournamentRegistrationInputHead: {
         id: 'app.tournamentRegistrationInputHead',
-        defaultMessage: 'Turnier-Anmeldung - Battleground-Bulls'
+        defaultMessage: 'Turnier-Anmeldung - BattleBulls'
     },
     tournamentRegistrationInputHead2: {
         id: 'app.tournamentRegistrationInputHead2',

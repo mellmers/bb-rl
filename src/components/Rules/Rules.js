@@ -61,7 +61,7 @@ class Rules extends React.PureComponent {
                             <p>
                                 <FormattedHTMLMessage {...messages.ruleProcedure}/>
                             </p>
-                            <p><a className="link-dark" href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer">{formatMessage(messages.toTwitch)}</a></p>
+                            <p><a className="link-dark" href="https://www.twitch.tv/BattleBullsTV" target="_blank" rel="noopener noreferrer">{formatMessage(messages.toTwitch)}</a></p>
                         </div>
 
                         <div className="collapsed" data-toggle="collapse" data-target="#commands" role="button"

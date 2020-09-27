@@ -31,6 +31,8 @@ import slideImage7 from "./img/slider/battlefield-v.jpg";
 import slideImage8 from "./img/slider/dark-siders-wallpapers-1920x1080.jpg";
 import slideImage9 from "./img/slider/the-division-2-hd-wallpaper.jpg";
 
+import tournamentInfoVideo from "./tournament-info-video-fullhd.mp4";
+
 import Partner_MMOGA from './img/partner/MMOGA.png';
 import Partner_MMOGA_Hightlight from './img/partner/MMOGA-Highlight.png';
 import Partner_Runtime from './img/partner/Runtime.png';
@@ -50,12 +52,17 @@ export class Home extends PureComponent {
             streamIsLive: false,
             showRegistrationBtn: true,
             showTournamentInfo: true,
+            showTournamentInfoVideo: false,
+            tournamentInfoVideoPause: false,
+            tournamentInfoVideoVolume: 0,
             Twitch: null
         };
     }
 
     componentDidMount() {
         this.resizeTwitchPlayer = this.resizeTwitchPlayer.bind(this);
+        this.startTournamentInfoVideo = this.startTournamentInfoVideo.bind(this);
+        this.resizeTournamentInfoVideo = this.resizeTournamentInfoVideo.bind(this);
 
         window.scrollTo(0, 0);
 
@@ -75,6 +82,7 @@ export class Home extends PureComponent {
             clearTimeout(this.resizeTimer);
             this.resizeTimer = setTimeout(() => {
                 this.resizeTwitchPlayer();
+                this.resizeTournamentInfoVideo();
             }, 250);
         });
 
@@ -94,6 +102,8 @@ export class Home extends PureComponent {
         this.checkBBStreamIsOnline = this.checkBBStreamIsOnline.bind(this);
         this.checkBBStreamIsOnline();
         setInterval(this.checkBBStreamIsOnline, 60000);
+
+        this.startTournamentInfoVideo();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -117,7 +127,7 @@ export class Home extends PureComponent {
 
     checkBBStreamIsOnline () {
         // Request stream and look if stream is online
-        API.getInstance()._fetch("https://api.twitch.tv/helix/streams?user_login=battleground_bulls", "GET", null, null, {"Client-ID": "swviygtzpvpvtpm5r79410wd6221th"}).then(json => {
+        API.getInstance()._fetch("https://api.twitch.tv/helix/streams?user_login=BattleBullsTV", "GET", null, null, {"Client-ID": "swviygtzpvpvtpm5r79410wd6221th"}).then(json => {
             let live = false;
             if (json.data && json.data.length > 0) {
                 live = true;
@@ -158,7 +168,7 @@ export class Home extends PureComponent {
                         autoplay: true,
                         layout: "video-with-chat",
                         width: 3000,
-                        channel: "battleground_bulls"
+                        channel: "BattleBullsTV"
                     });
                     $(this.refs.fullpage).find("#twitch-embed-bb").delay(1000).fadeIn();
                     break;
@@ -177,13 +187,76 @@ export class Home extends PureComponent {
         }
     }
 
+    startTournamentInfoVideo() {
+        setTimeout( () => {
+            let videoWrapper = $("#tournament-info-video");
+            if (videoWrapper.length > 0) {
+                videoWrapper.css({height: $(".slick-slider").height()});
+
+                let video = videoWrapper.find('video');
+                video.prop('volume', 0);
+                video.trigger('play');
+                setTimeout(() => {
+                    video.trigger('pause');
+                    this.setState({tournamentInfoVideoPause: true});
+                }, 2000);
+                this.setState({showTournamentInfoVideo: true});
+
+                videoWrapper.find('.video-play').on('click', () => {
+                    let volume = 0.5;
+                    video.trigger('play');
+                    video.prop('volume', volume);
+                    this.setState({
+                        tournamentInfoVideoPause: false,
+                        tournamentInfoVideoVolume: volume
+                    });
+                });
+
+                videoWrapper.find('.video-mute').on('click', () => {
+                    let volume = this.state.tournamentInfoVideoVolume;
+                    switch (volume) {
+                        case 0:
+                            volume = 0.5;
+                            break;
+                        case 0.5:
+                            volume = 1;
+                            break;
+                        default:
+                            volume = 0;
+                            break;
+                    }
+                    video.prop('volume', volume);
+                    this.setState({tournamentInfoVideoVolume: volume});
+                });
+                video.on('play', () => {
+                    this.setState({tournamentInfoVideoPause: false});
+                });
+                video.on('pause', () => {
+                    this.setState({tournamentInfoVideoPause: true});
+                });
+                video.on('ended', () => {
+                    setTimeout(() => {
+                        this.setState({showTournamentInfoVideo: false});
+                    }, 2000);
+                });
+            }
+        }, 500);
+    }
+
+    resizeTournamentInfoVideo() {
+        let video = $("#tournament-info-video");
+        if (video.length > 0) {
+            video.css({height: $(".slick-slider").height()});
+        }
+    }
+
     render() {
         let { streamIsLive } = this.state;
         let liveButton = null,
-            logo = <img src={logoSchriftzug} className="logo" alt="Battleground Bulls"/>;
+            logo = <img src={logoSchriftzug} className="logo" alt="BattleBulls"/>;
         if (streamIsLive) {
             liveButton = <div className="live-btn" onClick={this.openStream.bind(this, "bb")}><div className="record"/>Jetzt live</div>;
-            logo = <img src={logoSchriftzug} className="logo" alt="Battleground Bulls" onClick={this.openStream.bind(this, "bb")}/>;
+            logo = <img src={logoSchriftzug} className="logo" alt="BattleBulls" onClick={this.openStream.bind(this, "bb")}/>;
         }
         const {intl:{formatMessage}} = this.props;
 
@@ -206,7 +279,7 @@ export class Home extends PureComponent {
         return (
             <div ref="fullpage" className="container-fluid home">
                 <Helmet>
-                    <title>Home - Battleground-Bulls</title>
+                    <title>Home - BattleBulls</title>
                     <script src="https://embed.twitch.tv/embed/v1.js" async defer />
                 </Helmet>
 
@@ -222,7 +295,7 @@ export class Home extends PureComponent {
                                 <div className="overlay"/>
 
                                 <Zoom top delay={300} duration={2000}>
-                                    <div className="logo-wrapper" data-toggle="tooltip" data-placement="right" title="Zum Live-Stream" data-original-title="Zum Live-Stream">
+                                    <div className={classnames("logo-wrapper", {"d-none": this.state.showTournamentInfoVideo})} data-toggle="tooltip" data-placement="right" title="Zum Live-Stream" data-original-title="Zum Live-Stream">
                                         {liveButton}
                                         {logo}
                                     </div>
@@ -234,6 +307,14 @@ export class Home extends PureComponent {
                                         return <div key={index} className="slide-content"><div className="slide-image" style={{backgroundImage: `url(${img})`}}/></div>
                                     })}
                                 </Slider>
+
+                                <div id="tournament-info-video" className={classnames({"d-none": !this.state.showTournamentInfoVideo})}>
+                                    <video controls>
+                                        <source src={tournamentInfoVideo} type="video/mp4"/>
+                                    </video>
+                                    <button className={classnames("video-play", {"d-none": !this.state.tournamentInfoVideoPause})}><i className="fas fa-play"/></button>
+                                    <button className="video-mute"><i className={classnames("fas fa-fw", {"fa-volume-mute": this.state.tournamentInfoVideoVolume === 0, "fa-volume-down": this.state.tournamentInfoVideoVolume === 0.5, "fa-volume-up": this.state.tournamentInfoVideoVolume === 1})}/></button>
+                                </div>
                             </div>
                         </div>
 
@@ -242,23 +323,23 @@ export class Home extends PureComponent {
                                 <img src={Partner_MMOGA} alt="MMOGA" />
                                 <img className="highlight" src={Partner_MMOGA_Hightlight} alt="MMOGA" />
                             </a>
-                            <a className="image-wrapper" href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer">
+                            <a className={classnames("image-wrapper", {"d-none": this.state.showTournamentInfo})} href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer">
                                 <img src={Partner_Runtime} alt="Runtime" />
                                 <img className="highlight" src={Partner_Runtime_Hightlight} alt="Runtime" />
                             </a>
+                            <a className="image-wrapper" href="https://teamspeak.com/?utm_source=sponsor&utm_campaign=battleground-bulls" target="_blank" rel="noopener noreferrer">
+                                <img src={Partner_Teamspeak} alt="Teamspeak" />
+                                <img className="highlight" src={Partner_Teamspeak_Highlight} alt="Teamspeak" />
+                            </a>
                             <div className={classnames("tournament-info", {"d-none": !this.state.showTournamentInfo})}>
-                                <Counter endDate="March 3, 2019 15:15:00" endCallback={() => { this.setState({showRegistrationBtn: false, showTournamentInfo: false}) }} />
+                                <Counter endDate="October 15, 2020 15:00:00" endCallback={() => { this.setState({showRegistrationBtn: false, showTournamentInfo: false}) }} />
                                 <div className="links">
-                                    {this.state.showRegistrationBtn ? <Link messageId="route.tournamentRegistration" params={{teams: "2vs2"}} className="btn primary">{formatMessage(messages.signUpNow)}</Link> : null}
+                                    {this.state.showRegistrationBtn ? <Link messageId="route.tournamentRegistration" params={{teams: ""}} className="btn primary">{formatMessage(messages.signUpNow)}</Link> : null}
                                     {/*<Link messageId="route.adventCalendar" className="btn primary">{formatMessage(messages.adventCalendar)}</Link>*/}
                                     {/*<Link messageId="route.schedule" className="btn primary">{formatMessage(messages.streamSchedule)}</Link>*/}
                                     {/*<a href="https://discord.gg/gke2aYp" className="btn discord" target="_blank" rel="noopener noreferrer">Join Discord</a>*/}
                                 </div>
                             </div>
-                            <a className="image-wrapper" href="https://teamspeak.com/?utm_source=sponsor&utm_campaign=battleground-bulls" target="_blank" rel="noopener noreferrer">
-                                <img src={Partner_Teamspeak} alt="Teamspeak" />
-                                <img className="highlight" src={Partner_Teamspeak_Highlight} alt="Teamspeak" />
-                            </a>
                             <a className="image-wrapper" href="https://www.gamewallpapers.com/" target="_blank" rel="noopener noreferrer">
                                 <img src={Partner_GameWallpaper} alt="GameWallpaper" />
                                 <img className="highlight" src={Partner_GameWallpaper_Highlight} alt="GameWallpaper" />

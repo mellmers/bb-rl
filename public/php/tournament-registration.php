@@ -13,8 +13,8 @@ parse_str(json_decode(file_get_contents('php://input')), $data);
 
 // ======= Konfiguration:
 
-$mailTo = 'anmeldung@battleground-bulls.de';
-$mailFrom = '"Rocket League Anmeldung" <support@battleground-bulls.de>';
+$mailTo = 'anmeldung@battlebulls.de';
+$mailFrom = '"Rocket League Anmeldung" <anmeldung@battlebulls.de>';
 $mailSubject = 'Turnier-Anmeldung';
 $mailText = '';
 $headers  = 'From: '.$mailFrom."\r\n";

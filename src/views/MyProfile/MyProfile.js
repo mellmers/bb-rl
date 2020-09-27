@@ -43,7 +43,7 @@ class MyProfile extends React.PureComponent {
         console.log(user);
         return (
             <div id="my-profile" className="view full-container my-profile">
-                <Helmet><title>Mein Profil - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Mein Profil - BattleBulls</title></Helmet>
                 <div className="container">
                     <h1>Mein Profil</h1>
 
@@ -233,7 +233,7 @@ class MyProfile extends React.PureComponent {
                                         className="form-control"
                                         id="inputClan"
                                         maxLength={255}
-                                        placeholder="Bsp.: Battleground-Bulls"
+                                        placeholder="Bsp.: BattleBulls"
                                         defaultValue={user.profile.clan}
                                     />
                                 </div>

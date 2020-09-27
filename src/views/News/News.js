@@ -35,7 +35,7 @@ export default class News extends React.PureComponent {
                 category: "Stream",
                 date: "28. Juli 2018",
                 title: "Homepage Online",
-                text: "Liebe Community und Mitglieder der Battleground Bulls," +
+                text: "Liebe Community und Mitglieder der BattleBulls," +
                     "heute möchten wir euch mitteilen, dass unsere Homepage sich aktuell in der Startphase befindet.<br>" +
                     "Wir arbeiten stets daran, neue Features und Inhalte für euch zur Verfügung zu stellen, um euch " +
                     "unsere Homepage so schmackhaft wie möglich zu machen." +
@@ -52,7 +52,7 @@ export default class News extends React.PureComponent {
                     "" +
                     "<p>Wir bedanken uns für deinen Besuch und hoffen dich bald wieder zu sehen.</p>" +
                     "" +
-                    "<p>Euer Battleground-Bulls Team</p>"
+                    "<p>Euer BattleBulls Team</p>"
 
             },
             {
@@ -143,7 +143,7 @@ export default class News extends React.PureComponent {
         return (
             <div className="view full-container news">
                 <Helmet onChangeClientState={(newState, addedTags) => this.handleScriptInject(addedTags)}>
-                    <title>News - Battleground Bulls</title>
+                    <title>News - BattleBulls</title>
                     <script src="/js/isotope.min.js" async defer />
                 </Helmet>
 

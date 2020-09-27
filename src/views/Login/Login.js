@@ -60,7 +60,7 @@ class Login extends React.PureComponent {
         let search = searchToObject(this.props.location.search);
         return search.role ? (
             <div className="access-denied">
-                <Helmet><title>Zugriff verweigert - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Zugriff verweigert - BattleBulls</title></Helmet>
                 <div className="alert alert-danger">
                     <h1>Zugriff verweigert.</h1> <br/> Bitte logge dich mit der richtigen Berechtigung ein.
                 </div>
@@ -80,7 +80,7 @@ class Login extends React.PureComponent {
         return (
             <div className="view full-container login">
                 <div className="container">
-                    <Helmet><title>Login - Battleground-Bulls</title></Helmet>
+                    <Helmet><title>Login - BattleBulls</title></Helmet>
 
                     <div className="row">
                         <div className="col-12 col-md-6 offset-md-3">

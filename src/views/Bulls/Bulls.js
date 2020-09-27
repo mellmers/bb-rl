@@ -28,7 +28,7 @@ class Bulls extends React.PureComponent {
         return (
             <div ref="bulls" className="view full-container bulls">
                 <Helmet>
-                    <title>{formatMessage(messages.member)} - Battleground-Bulls</title>
+                    <title>{formatMessage(messages.member)} - BattleBulls</title>
                 </Helmet>
 
                 <div className="section">

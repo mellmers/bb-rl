@@ -72,7 +72,7 @@ class Registration extends React.PureComponent {
         return (
             <div className="view full-container registration">
                 <div className="container">
-                    <Helmet><title>Registration - Battleground-Bulls</title></Helmet>
+                    <Helmet><title>Registration - BattleBulls</title></Helmet>
                     <div className="row">
                         <div className="col-12 col-md-6 offset-md-3">
                             <h1>Registrierung</h1>

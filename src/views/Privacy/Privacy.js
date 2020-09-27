@@ -1,8 +1,9 @@
 import React from 'react';
 import {Helmet} from "react-helmet";
 
-import './Privacy.css';
+import {EMAIL_BUSINESS} from "../../constants";
 
+import './Privacy.css';
 
 export default class Privacy extends React.PureComponent {
 
@@ -13,12 +14,12 @@ export default class Privacy extends React.PureComponent {
     render() {
         return (
             <div className="container privacy">
-                <Helmet><title>Datenschutz - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Datenschutz - BattleBulls</title></Helmet>
                 <h1>Datenschutz</h1>
                 <div className="row">
                     <div className="col-12">
                         <h2>1. Datenschutz auf einen Blick</h2>
-                        
+
                         <h3>Allgemeine Hinweise</h3>
                         <p>
                             Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren
@@ -107,7 +108,7 @@ export default class Privacy extends React.PureComponent {
                             Malthe Strauch <br/>
                             Herrenkamp 21 <br/>
                             27299 Langwedel <br/>
-                            <a href="mailto:business@battleground-bulls.de">business@battleground-bulls.de</a>
+                            <a href={"mailto:" + EMAIL_BUSINESS}>{EMAIL_BUSINESS}</a>
                         </p>
                         <p>
                             Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam

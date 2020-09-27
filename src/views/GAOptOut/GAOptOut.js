@@ -63,7 +63,7 @@ export default class GAOptOut extends PureComponent {
         }
         return (
             <div className="view full-container">
-                <Helmet><title>Opt-Out - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Opt-Out - BattleBulls</title></Helmet>
 
                 <div className="container text-center">
                     <h1>Google Analytics - Opt {optOut ? "In" : "Out"}</h1>

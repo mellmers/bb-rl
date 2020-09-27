@@ -77,7 +77,7 @@ export default class Calendar extends React.PureComponent {
     render() {
         return (
             <div className="view full-container calendar">
-                <Helmet><title>Kalender - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Kalender - BattleBulls</title></Helmet>
                 <div className="container">
                     <div ref="calendar" />
                 </div>

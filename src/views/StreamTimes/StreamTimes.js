@@ -14,7 +14,7 @@ class StreamTimes extends React.PureComponent {
         const {intl:{formatMessage}} = this.props;
         return (
             <div className="stream-times">
-                <Helmet><title>{formatMessage(messages.streamSchedule)} - Battleground-Bulls</title></Helmet>
+                <Helmet><title>{formatMessage(messages.streamSchedule)} - BattleBulls</title></Helmet>
 
                 <img src={banner} alt={formatMessage(messages.streamSchedule)} />
 

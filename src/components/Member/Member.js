@@ -20,7 +20,7 @@ export default class Member extends React.PureComponent {
                     <div><div className="title">Name:</div> {name}</div>
                     <div><div className="title">Funktion:</div> {Array.isArray(job) ? job.join(", ") : job}</div>
                     <div><div className="title">Spiele:</div> {Array.isArray(games) ? games.join(", ") : games}</div>
-                    <div><div className="title description">Warum bist du bei den Battleground Bulls?</div></div>
+                    <div><div className="title description">Warum bist du bei den BattleBulls?</div></div>
                     <ReadMore>{description}</ReadMore>
                 </div>
             </div>

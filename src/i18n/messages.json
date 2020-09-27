@@ -11,7 +11,7 @@
   },
   {
     "id": "app.aboutContent1",
-    "defaultMessage": "Die Battleground Bulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n                                    die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r\n                                    zusammengefunden haben. Die Idee bestand darin, einen eigenen Stream Kanal zu\n                                    gründen, um auf neue Interessante und vor allem gleichgesinnte Leute aus\n                                    dem Bereich Gaming zu treffen. Mittlerweile wurde die Idee zu einer kleinen\n                                    Lebensaufgabe.",
+    "defaultMessage": "Die BattleBulls bestehen aus einem kleinen familiären Haufen Zweibeiner,\n                                    die durch eine Idee von Patrick aka m4kar0ny und Malthe aka xPainHunt3r\n                                    zusammengefunden haben. Die Idee bestand darin, einen eigenen Stream Kanal zu\n                                    gründen, um auf neue Interessante und vor allem gleichgesinnte Leute aus\n                                    dem Bereich Gaming zu treffen. Mittlerweile wurde die Idee zu einer kleinen\n                                    Lebensaufgabe.",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -286,7 +286,7 @@
   },
   {
     "id": "app.partnerHead",
-    "defaultMessage": "Unterstütze die Battleground Bulls und kaufe über diese Links",
+    "defaultMessage": "Unterstütze die BattleBulls und kaufe über diese Links",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -501,7 +501,7 @@
   },
   {
     "id": "app.ruleProcedure",
-    "defaultMessage": "Alle Spiele vom Turnier werden <strong>Live</strong> von den Battleground Bulls gestreamt und kommentiert. Vor dem Start des Turniers wird der Turnierplan gezeigt, damit alle 2-4 Stunden</strong> veranschlagt. Alle <strong>Ergebnisse</strong> werden nach dem Spiel <strong>Live</strong> im Turnierplan eingetragen.",
+    "defaultMessage": "Alle Spiele vom Turnier werden <strong>Live</strong> von den BattleBulls gestreamt und kommentiert. Vor dem Start des Turniers wird der Turnierplan gezeigt, damit alle 2-4 Stunden</strong> veranschlagt. Alle <strong>Ergebnisse</strong> werden nach dem Spiel <strong>Live</strong> im Turnierplan eingetragen.",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -651,7 +651,7 @@
   },
   {
     "id": "app.tournamentRegistrationHead",
-    "defaultMessage": "Turnier-Anmeldung - Battleground-Bulls",
+    "defaultMessage": "Turnier-Anmeldung - BattleBulls",
     "filepath": "src/i18n/messages.js"
   },
   {
@@ -671,7 +671,7 @@
   },
   {
     "id": "app.tournamentRegistrationInputHead",
-    "defaultMessage": "Turnier-Anmeldung - Battleground-Bulls",
+    "defaultMessage": "Turnier-Anmeldung - BattleBulls",
     "filepath": "src/i18n/messages.js"
   },
   {

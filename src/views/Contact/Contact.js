@@ -4,6 +4,8 @@ import {Helmet} from "react-helmet";
 import {injectIntl} from "react-intl";
 import messages from "../../i18n/messages";
 
+import {EMAIL_SUPPORT} from "../../constants";
+
 import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
 
 import "./Contact.css";
@@ -89,11 +91,11 @@ class Contact extends React.PureComponent {
         if (bugReport) {
             successfullSendConfirmation = formatMessage(messages.sendFormSuccessfullMailBug) + formData.mail;
             successfullSend = formatMessage(messages.sendFormSuccessfullBug);
-            errorSend = formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.'
+            errorSend = formatMessage(messages.sendFormError) + <a href={"mailto:support@battlebulls.de"}>support&commat;battlebulls.de</a> + '.'
         } else {
             successfullSendConfirmation = formatMessage(messages.sendFormSuccessfullMail) + formData.mail;
             successfullSend = formatMessage(messages.sendFormSuccessfull);
-            errorSend = formatMessage(messages.sendFormError) + <a href={"mailto:support@battleground-bulls.de"}>support&commat;battleground-bulls.de</a> + '.';
+            errorSend = formatMessage(messages.sendFormError) + <a href={"mailto:support@battlebulls.de"}>support&commat;battlebulls.de</a> + '.';
         }
 
         if (result) {
@@ -105,9 +107,9 @@ class Contact extends React.PureComponent {
                 case "mail-not-sent":
                     return <div className="alert alert-danger" role="alert">{errorSend} </div>;
                 case "recaptcha-not-valid":
-                    return <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback4)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
+                    return <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback4)} (<a href={"mailto:" + EMAIL_SUPPORT}>{EMAIL_SUPPORT}</a>).</div>;
                 case "unknown-error":
-                    return <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback5)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
+                    return <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback5)} (<a href={"mailto:" + EMAIL_SUPPORT}>{EMAIL_SUPPORT}</a>).</div>;
                 default:
                     return;
             }
@@ -136,7 +138,7 @@ class Contact extends React.PureComponent {
 
         return (
             <div className="view full-container contact-form">
-                <Helmet><title>{bugReport ? formatMessage(messages.bugReportTitle) : formatMessage(messages.contactFormTitle)} - Battleground-Bulls</title></Helmet>
+                <Helmet><title>{bugReport ? formatMessage(messages.bugReportTitle) : formatMessage(messages.contactFormTitle)} - BattleBulls</title></Helmet>
                 <div className="container">
                     <h1>{bugReport ? formatMessage(messages.bugReportTitle) : formatMessage(messages.contactFormTitle)}</h1>
                     <form onSubmit={this.execRecaptcha}>

@@ -114,7 +114,7 @@ class Header extends React.PureComponent {
             <header>
                 <nav className="navbar navbar-expand-lg">
                     <div className="container">
-                        <Link messageId="route.home" hash="start" className="navbar-brand"><img src={logo} alt="Battleground-Bulls"/></Link>
+                        <Link messageId="route.home" hash="start" className="navbar-brand"><img src={logo} alt="BattleBulls"/></Link>
                         <div className="navbar-toggler collapsed" data-toggle="collapse"
                              data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                              aria-label="Toggle navigation">
@@ -159,7 +159,7 @@ class Header extends React.PureComponent {
                             </ul>
                             <LanguageSwitcher />
                             <ul className="navbar-nav d-none d-xl-flex socials">
-                                <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/battleground_bulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/BattleBullsTV" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://discord.gg/9psnFwb" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://instagram.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" /></a></li>
                                 <li className="nav-item"><a className="nav-link" href="https://twitter.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter" /></a></li>

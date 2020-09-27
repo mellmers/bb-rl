@@ -135,6 +135,52 @@
         }
       }
 
+      #tournament-info-video {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background: $backgroundBlue;
+
+        video {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+        }
+
+        .video-play,
+        .video-mute {
+          position: absolute;
+          background: none;
+          border: none;
+          outline: none;
+          padding: 1rem;
+
+          i {
+            font-size: 3rem;
+            color: $textColorLight;
+          }
+        }
+
+        .video-play {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+
+          i {
+            font-size: 5rem;
+          }
+        }
+
+        .video-mute {
+          bottom: 2rem;
+          right: 2rem;
+        }
+      }
+
       .partner {
         height: $partnerHeight;
         display: flex;

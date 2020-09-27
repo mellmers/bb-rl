@@ -2,6 +2,8 @@ import React, {PureComponent} from 'react';
 import './Imprint.css';
 import {Helmet} from "react-helmet";
 
+import {EMAIL_BUSINESS} from "../../constants";
+
 export default class Imprint extends PureComponent {
 
     componentDidMount() {
@@ -11,7 +13,7 @@ export default class Imprint extends PureComponent {
     render() {
         return (
             <div className="container imprint">
-                <Helmet><title>Imprint - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Imprint - BattleBulls</title></Helmet>
                 <h1>Impressum</h1>
 
                 <h5> Angaben gemäß § 5 TMG</h5>
@@ -27,7 +29,7 @@ export default class Imprint extends PureComponent {
                 <h5>Kontakt:</h5>
                 <p>
                     Telefon: 04232/9449543 <br/>
-                    E-Mail: <a href='mailto:business@battleground-bulls.de'>business@battleground-bulls.de</a><br/>
+                    E-Mail: <a href={'mailto:' + EMAIL_BUSINESS}>{EMAIL_BUSINESS}</a><br/>
                 </p>
 
                 {

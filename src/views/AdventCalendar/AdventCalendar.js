@@ -21,7 +21,7 @@ class AdventCalendar extends React.PureComponent {
         return (
             <div id="advent-calendar" className="view full-container">
                 <Helmet>
-                    <title>{formatMessage(messages.adventCalendar)} - Battleground-Bulls</title>
+                    <title>{formatMessage(messages.adventCalendar)} - BattleBulls</title>
                     <script src="/js/advent-calendar.js" async defer />
                 </Helmet>
 

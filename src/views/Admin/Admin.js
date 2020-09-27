@@ -12,7 +12,7 @@ class Admin extends React.PureComponent {
         console.log(this.props.user);
         return (
             <div className="container admin-view">
-                <Helmet><title>Admin - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Admin - BattleBulls</title></Helmet>
                 <h1>Admin panel</h1>
             </div>
         );

@@ -14,8 +14,8 @@ $data = array();
 parse_str(json_decode(file_get_contents('php://input')), $data);
 
 // ======= Konfiguration:
-$mailTo = 'kontakt@battleground-bulls.de';
-$mailFrom = '"Battleground Bulls" <support@battleground-bulls.de>';
+$mailTo = 'support@battlebulls.de';
+$mailFrom = '"BattleBulls" <support@battlebulls.de>';
 $mailSubject = '';
 $mailText = '';
 $headers  = 'From: '.$mailFrom."\r\n";

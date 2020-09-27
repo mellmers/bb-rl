@@ -4,6 +4,8 @@ import {Helmet} from "react-helmet";
 import {injectIntl} from "react-intl";
 import messages from "../../i18n/messages";
 
+import {EMAIL_SUPPORT} from "../../constants";
+
 import ReCAPTCHA from "../../components/ReCAPTCHA/ReCAPTCHA";
 
 import "./TournamentRegistration.css";
@@ -86,13 +88,13 @@ class TournamentRegistration extends React.PureComponent {
                     render = <div className="alert alert-success" role="alert">{formatMessage(messages.tournamentRegistrationFeedback2)}</div>;
                     break;
                 case "mail-not-sent":
-                    render = <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback3)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
+                    render = <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback3)} (<a href={"mailto:" + EMAIL_SUPPORT}>{EMAIL_SUPPORT}</a>).</div>;
                     break;
                 case "recaptcha-not-valid":
-                    render = <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback4)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
+                    render = <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback4)} (<a href={"mailto:" + EMAIL_SUPPORT}>{EMAIL_SUPPORT}</a>).</div>;
                     break;
                 case "unknown-error":
-                    render = <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback5)} (<a href="mailto:support@battleground-bulls.de">support@battleground-bulls.de</a>).</div>;
+                    render = <div className="alert alert-danger" role="alert">{formatMessage(messages.tournamentRegistrationFeedback5)} (<a href={"mailto:" + EMAIL_SUPPORT}>{EMAIL_SUPPORT}</a>).</div>;
                     break;
                 default:
                     break;

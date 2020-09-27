@@ -9,7 +9,7 @@ export default class Hardware extends React.PureComponent {
         return (
 
             <div id="hardware" className="view full-container hardware">
-                <Helmet><title>Hardware - Battleground-Bulls</title></Helmet>
+                <Helmet><title>Hardware - BattleBulls</title></Helmet>
                 <div className="container">
                     <h1>Hardware</h1>
 
