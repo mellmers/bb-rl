@@ -181,7 +181,7 @@ export default defineMessages({
     },
     helmetDefault: {
         id: 'app.helmet.default',
-        defaultMessage: 'Battleground-Bulls'
+        defaultMessage: 'BattleBulls'
     },
     home: {
         id: 'app.home',

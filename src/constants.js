@@ -16,9 +16,9 @@ export const LINK_DISCORD = "https://discord.gg/9psnFwb";
 export const LINK_FACEBOOK = "https://www.facebook.com/groups/BattlegroundBuLLs/";
 export const LINK_INSTAGRAM = "https://instagram.com/BattleBulls";
 export const LINK_TWITTER = "https://twitter.com/BattleBulls";
-export const LINK_TWITCH = "https://www.twitch.tv/battleground_bulls";
+export const LINK_TWITCH = "https://www.twitch.tv/BattleBullsTV";
 export const LINK_YOUTUBE = "https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w";
-export const TWITCH_CHANNEL_NAME = "battleground_bulls";
+export const TWITCH_CHANNEL_NAME = "BattleBullsTV";
 
 // E-Mails
 export const EMAIL_SUPPORT = "support@battlebulls.de";

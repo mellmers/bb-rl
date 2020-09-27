@@ -80,7 +80,7 @@ class MyProfile extends React.PureComponent {
                                         className="form-control"
                                         id="email"
                                         maxLength={255}
-                                        placeholder="Bsp.: xPainHunt3r@battleground-bulls.de"
+                                        placeholder="Bsp.: xPainHunt3r@battlebulls.de"
                                         defaultValue={user.email}
                                         required
                                     />

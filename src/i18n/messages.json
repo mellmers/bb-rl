@@ -206,7 +206,7 @@
   },
   {
     "id": "app.helmet.default",
-    "defaultMessage": "Battleground-Bulls",
+    "defaultMessage": "BattleBulls",
     "filepath": "src/i18n/messages.js"
   },
   {

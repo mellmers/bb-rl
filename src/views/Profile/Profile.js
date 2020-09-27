@@ -11,6 +11,7 @@ import {PRIVACY_PRIVATE, PRIVACY_LOCAL, PRIVACY_PUBLIC} from "../../constants";
 import headerImg from "./header.svg";
 
 import "./Profile.css";
+import messages from "../../i18n/messages";
 
 class Profile extends React.PureComponent {
 
@@ -65,11 +66,12 @@ class Profile extends React.PureComponent {
     render() {
         let { user } = this.state,
             usernameFromUrl = this.props.match.params.username;
+        const { intl:{formatMessage} } = this.props;
         const hardwareUnspecifiedText = <span className="disabled-text">Nicht angegeben</span>;
         if (user === null) {
             return (
                 <div id="profile" className="view full-container profile">
-                    <Helmet><title>Profil von {usernameFromUrl} - Battleground-Bulls</title></Helmet>
+                    <Helmet><title>Profil von {usernameFromUrl} - {formatMessage(messages.helmetDefault)}</title></Helmet>
                     <div className="container">
                         <div className="row header">
                             <img src={headerImg} alt="" />
@@ -81,7 +83,7 @@ class Profile extends React.PureComponent {
         }
         return (
             <div id="profile" className="view full-container profile">
-                <Helmet><title>{user.username} - Battleground-Bulls</title></Helmet>
+                <Helmet><title>{user.username} - BattleBulls</title></Helmet>
                 <div className="container">
                     <div className="row header">
                         <img src={headerImg} alt="" />
