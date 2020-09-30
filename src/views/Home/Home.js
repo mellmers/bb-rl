@@ -1,4 +1,5 @@
 import React, {PureComponent} from "react";
+import ReactGA from 'react-ga';
 import classnames from "classnames";
 import Helmet from "react-helmet";
 import {injectIntl} from "react-intl";
@@ -49,6 +50,7 @@ export class Home extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            gaVideoStarted: false,
             streamIsLive: false,
             showRegistrationBtn: true,
             showTournamentInfo: true,
@@ -206,9 +208,19 @@ export class Home extends PureComponent {
                     let volume = 0.5;
                     video.trigger('play');
                     video.prop('volume', volume);
+
+                    if (!this.state.gaVideoStarted) {
+                        ReactGA.event({
+                            category: 'Video',
+                            action: 'Abgespielt',
+                            label: 'Turnierankündigung'
+                        });
+                    }
+
                     this.setState({
                         tournamentInfoVideoPause: false,
-                        tournamentInfoVideoVolume: volume
+                        tournamentInfoVideoVolume: volume,
+                        gaVideoStarted: true
                     });
                 });
 
@@ -332,7 +344,7 @@ export class Home extends PureComponent {
                                 <img className="highlight" src={Partner_Teamspeak_Highlight} alt="Teamspeak" />
                             </a>
                             <div className={classnames("tournament-info", {"d-none": !this.state.showTournamentInfo})}>
-                                <Counter endDate="October 15, 2020 15:00:00" endCallback={() => { this.setState({showRegistrationBtn: false, showTournamentInfo: false}) }} />
+                                <Counter endDate="October 11, 2020 15:00:00" endCallback={() => { this.setState({showRegistrationBtn: false, showTournamentInfo: false}) }} />
                                 <div className="links">
                                     {this.state.showRegistrationBtn ? <Link messageId="route.tournamentRegistration" params={{teams: ""}} className="btn primary">{formatMessage(messages.signUpNow)}</Link> : null}
                                     {/*<Link messageId="route.adventCalendar" className="btn primary">{formatMessage(messages.adventCalendar)}</Link>*/}
