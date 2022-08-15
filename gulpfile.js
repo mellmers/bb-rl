@@ -3,7 +3,7 @@ let ftpHelper = require('./utils/ftpHelper');
 
 gulp.task('upload', function (resolve) {
     let conn = ftpHelper.getConn({
-        path: 'web/battleground-bulls.de'
+        path: 'web/battlebulls.de'
     });
     return gulp.src('build/**')
         .pipe(conn);
@@ -11,7 +11,7 @@ gulp.task('upload', function (resolve) {
 
 gulp.task('uploadDev', function (resolve) {
     let conn = ftpHelper.getConn({
-        path: 'web/dev.battleground-bulls.de'
+        path: 'web/dev.battlebulls.de'
     });
     return gulp.src('build/**')
         .pipe(conn);

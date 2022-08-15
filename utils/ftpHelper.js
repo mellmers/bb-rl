@@ -6,9 +6,9 @@ let ftpHelper = {
     plugins: null,
     getConn: function (config) {
         return sftp({
-            host: "85.10.207.134",
-            user: "moritz",
-            port: "22",
+            host: '38.242.140.22',
+            user: 'moritz',
+            port: '61093',
             remotePath: config.path,
             key: keyfile.key,
             passphrase: keyfile.passphrase
