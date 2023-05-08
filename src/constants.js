@@ -11,7 +11,7 @@ export const COOKIE_COOKIECONSENT_STATUS = "cookieconsent_status";
 export const COOKIE_OPT_OUT = "ga_opt_out";
 
 export const EMAIL_SUPPORT = "support@battlebulls.de";
-export const EMAIL_BUSINESS = "business@battleground-bulls.de";
+export const EMAIL_BUSINESS = "business@battlebulls.de";
 
 // Actions
 export const APPLICATION_LOGIN = "APPLICATION_LOGIN";

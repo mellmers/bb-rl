@@ -58,6 +58,7 @@ class Header extends React.PureComponent {
         });
         $(this.refs.backdrop).on("click", this.hideSidebar);
         $(".navbar-brand, .navbar-nav:not(.sign-in), .sidebar-wrapper li").on("click", this.hideSidebar);
+        $("[data-toggle='tooltip']").tooltip();
 
         this.deactivateImgContextMenu();
     }
@@ -158,15 +159,15 @@ class Header extends React.PureComponent {
                                 </li>
                             </ul>
                             <LanguageSwitcher />
-                            <ul className="navbar-nav d-none d-xl-flex socials">
-                                <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/BattleBullsTV" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitch" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://discord.gg/9psnFwb" target="_blank" rel="noopener noreferrer"><i className="fab fa-discord" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://instagram.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://twitter.com/BattleBulls" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/groups/BattlegroundBuLLs/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" /></a></li>
-                                <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube" /></a></li>
+                            <ul className="navbar-nav d-none d-lg-flex socials">
+                                <li className="nav-item"><a className="nav-link" href="https://www.twitch.tv/BattleBullsTV" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="Twitch"><i className="fab fa-twitch" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://discord.gg/9psnFwb" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="Discord"><i className="fab fa-discord" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://instagram.com/BattleBulls" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="Instagram"><i className="fab fa-instagram" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://twitter.com/BattleBulls" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="Twitter"><i className="fab fa-twitter" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/groups/BattlegroundBuLLs/" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="Facebook"><i className="fab fa-facebook-f" /></a></li>
+                                <li className="nav-item"><a className="nav-link" href="https://www.youtube.com/channel/UCPSSW0COqKjF5nSn-3aYh7w" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" title="YouTube"><i className="fab fa-youtube" /></a></li>
                             </ul>
-                            <ul ref="navSignIn" className="navbar-nav sign-in">
+                            {/*<ul ref="navSignIn" className="navbar-nav sign-in">
                                 {user ? (
                                     <li className="nav-item logged-in">
                                         <button className="username" onClick={this.toggleUserSidebar}><i className="fas fa-user"/>{user.username}</button>
@@ -176,7 +177,7 @@ class Header extends React.PureComponent {
                                         <i className="fas fa-user d-none d-lg-inline-block" /> <Link messageId="route.login" className="nav-link">{formatMessage(messages.login)}</Link>|<Link messageId="route.register" className="nav-link">{formatMessage(messages.signIn)}</Link>
                                     </li>
                                 )}
-                            </ul>
+                            </ul>*/}
                         </div>
                     </div>
                 </nav>

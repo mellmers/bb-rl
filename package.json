@@ -1,6 +1,6 @@
 {
   "author": "Moritz Ellmers <info@moritzellmers.de>",
-  "name": "battleground-bulls.de",
+  "name": "battlebulls.de",
   "version": "0.1.2",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "iscroll": "^5.2.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.11",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "path": "^0.12.7",
     "popper.js": "^1.14.3",
     "prop-types": "^15.6.2",
@@ -48,7 +48,7 @@
     "ftp-deploy": "^1.2.2",
     "gulp": "^4.0.2",
     "gulp-sftp-up4": "^0.1.8",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.3",
     "serve": "^11.3.0"
   },
   "scripts": {

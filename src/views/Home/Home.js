@@ -105,7 +105,7 @@ export class Home extends PureComponent {
         this.checkBBStreamIsOnline();
         setInterval(this.checkBBStreamIsOnline, 60000);
 
-        this.startTournamentInfoVideo();
+        // this.startTournamentInfoVideo();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -335,10 +335,10 @@ export class Home extends PureComponent {
                                 <img src={Partner_MMOGA} alt="MMOGA" />
                                 <img className="highlight" src={Partner_MMOGA_Hightlight} alt="MMOGA" />
                             </a>
-                            <a className={classnames("image-wrapper", {"d-none": this.state.showTournamentInfo})} href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer">
+                            {/*<a className={classnames("image-wrapper", {"d-none": this.state.showTournamentInfo})} href="https://runtime.idevaffiliate.com/780-1-3-2.html" target="_blank" rel="noopener noreferrer">
                                 <img src={Partner_Runtime} alt="Runtime" />
                                 <img className="highlight" src={Partner_Runtime_Hightlight} alt="Runtime" />
-                            </a>
+                            </a>*/}
                             <a className="image-wrapper" href="https://teamspeak.com/?utm_source=sponsor&utm_campaign=battleground-bulls" target="_blank" rel="noopener noreferrer">
                                 <img src={Partner_Teamspeak} alt="Teamspeak" />
                                 <img className="highlight" src={Partner_Teamspeak_Highlight} alt="Teamspeak" />

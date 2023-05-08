@@ -105,12 +105,16 @@ header {
         background-position: 50% 50%;
         background-size: 100% 0;
         transition: background-size .5s, color .75s;
-        padding: 10px 5px;
+        //padding: 10px 5px;
+        padding: 10px;
         &:hover {
           background-size: 100% 100%;
         }
         @media (min-width: $navbarCollapse) {
           padding: 20px 5px;
+        }
+        @media (min-width: $breakpoint-xl) {
+          padding: 20px 10px;
         }
       }
 
@@ -121,14 +125,15 @@ header {
         }
 
         .language-switcher {
-          padding: 5px 0 10px 3px;
+          //padding: 5px 0 10px 3px;
+          padding: 5px 0 10px 8px;
           @media (min-width: $navbarCollapse) {
             margin-left: 25px;
             padding: 18px 25px 19px 25px;
             border-right: 1px solid $borderColorBlue;
             border-left: 1px solid $borderColorBlue;
           }
-          @media (min-width: $navbarCollapse) and (max-width: $breakpoint-xl - 1) {
+          @media (min-width: $navbarCollapse) and (max-width: $breakpoint-lg - 1) {
             display: none;
           }
         }
@@ -144,7 +149,7 @@ header {
             }
             @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
               padding-right: 25px;
-              border-right: 1px solid $borderColorBlue;
+              //border-right: 1px solid $borderColorBlue;
             }
             .nav-item {
               &.active {
@@ -212,7 +217,7 @@ header {
           }
 
           &.socials {
-            border-right: 1px solid $borderColorBlue;
+            //border-right: 1px solid $borderColorBlue;
             @media (min-width: $navbarCollapse) {
               padding-right: 25px;
             }
