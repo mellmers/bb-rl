@@ -1,12 +1,10 @@
 const sftp = require('gulp-sftp-up4');
 const keyfile = require('./key');
 
-let ftpHelper = {
-    ftpDeploy: null,
-    plugins: null,
+let sftpHelper = {
     getConn: function (config) {
         return sftp({
-            host: '38.242.140.22',
+            host: '94.250.202.6',
             user: 'moritz',
             port: '61093',
             remotePath: config.path,
@@ -15,4 +13,4 @@ let ftpHelper = {
         });
     }
 };
-module.exports = ftpHelper;
+module.exports = sftpHelper;

@@ -1,18 +1,16 @@
 let gulp = require('gulp');
-let ftpHelper = require('./utils/ftpHelper');
+let sftpHelper = require('./utils/sftpHelper');
 
 gulp.task('upload', function (resolve) {
-    let conn = ftpHelper.getConn({
+    let conn = sftpHelper.getConn({
         path: 'web/battlebulls.de'
     });
-    return gulp.src('build/**')
-        .pipe(conn);
+    return gulp.src('build/**').pipe(conn);
 });
 
 gulp.task('uploadDev', function (resolve) {
-    let conn = ftpHelper.getConn({
+    let conn = sftpHelper.getConn({
         path: 'web/dev.battlebulls.de'
     });
-    return gulp.src('build/**')
-        .pipe(conn);
+    return gulp.src('build/**').pipe(conn);
 });
