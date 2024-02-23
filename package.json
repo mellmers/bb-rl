@@ -51,6 +51,9 @@
     "node-sass": "^7.0.3",
     "serve": "^11.3.0"
   },
+  "devEngines": {
+    "node": "8.x || 9.x"
+  },
   "scripts": {
     "start": "set REACT_APP_DEVELOPMENT=true&&react-scripts start",
     "startLocalProdApi": "set REACT_APP_API=local_prod&&react-scripts start",
